@@ -1,7 +1,7 @@
 [
     {   
         "most_popular": true,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2017/09/ABU-DHABI-CITY-TOUR-400x270.jpg",
         "image_text": "Abu Dhabi City Tour",
         "event_name": "Inc. 5% VAT",
@@ -96,8 +96,8 @@
         ]
     },
     {   
-        "most_popular": true,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "most_popular": false,
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2019/03/Al-Ain-400x270.jpg",
         "image_text": "Al Ain City Tour",
         "event_name": "Minimum 2 pax for booking",
@@ -192,8 +192,8 @@
         ]
     },
     {   
-        "most_popular": true,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "most_popular": false,
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2017/09/DUBAI-CITY-TOUR-400x270.jpg",
         "image_text": "Dubai City Tour",
         "event_name": "Inc. 5% VAT",

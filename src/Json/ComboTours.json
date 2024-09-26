@@ -1,7 +1,7 @@
 [
     {   
-        "most_popular": true,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "most_popular": false,
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/09/Desert-dhows-1-400x270.jpg",
         "image_text": "Desert Safari & Dhow Cruise Dinner",
         "event_name": "Inc. 5% VAT",
@@ -97,7 +97,7 @@
     },
     {   
         "most_popular": true,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/09/abudhabi-Marina-Cruise-Dinner-400x270.jpg",
         "image_text": "Abu Dhabi City Tour + Marina Cruise Dinner",
         "event_name": "Inc. 5% VAT",
@@ -192,8 +192,8 @@
         ]
     },
     {   
-        "most_popular": true,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "most_popular": false,
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/09/Abu-Dhabi-City-Tour-Dhow-Cruise-Dinner-400x270.jpg",
         "image_text": "Abu Dhabi City Tour + Dhow Cruise Dinner",
         "event_name": "Inc. 5% VAT",

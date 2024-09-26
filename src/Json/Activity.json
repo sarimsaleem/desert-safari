@@ -1,7 +1,7 @@
 [
     {       
         "most_popular": true,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_text": "Evening Desert Safari (Deluxe)",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2017/09/Delux-400x270.jpg",
         "event_name": "4x4 Pickup",
@@ -93,11 +93,13 @@
             {
                 "text": "Terms & Conditions apply"
             }
+            
         ]
+   
     },
     {
         "most_popular": false   ,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_text": "Desert Safari With Quad Bike (Gold)",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2017/09/Gold-400x270.jpg",
         "event_name": "4x4 Pickup With Quad Bike",
@@ -193,7 +195,7 @@
     },
     {
         "most_popular": false   ,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_text": "Desert Safari With Dune Buggy 30 Mins (Shared Buggy For 2)",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2020/01/buggy_bike_1-400x270.png",
         "event_name": "4x4 Pickup",
@@ -289,7 +291,7 @@
     },
     {
         "most_popular": false   ,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_text": "Private Desert Safari ",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2017/09/Private-400x270.jpg",
         "event_name": "4x4 Pickup",
@@ -385,7 +387,7 @@
     },
     {
         "most_popular": false   ,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2019/12/Royal-400x270.jpg",
         "image_text": "luxury desert safari",
         "event_name": "luxury trip",
@@ -481,7 +483,7 @@
     },
     {
         "most_popular": false   ,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2017/09/MORNING-DUNE-BASHING-400x270.jpg",
         "event_name": "With Camel Ride",
         "image_text": "Morning Desert Safari",
@@ -577,7 +579,7 @@
     },
     {
         "most_popular": false   ,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/09/Mornings-400x270.jpg",
         "event_name": " 4x4 Pickup With Quad Bike",
         "image_text": "Morning Desert Safari Combo Offer",
@@ -673,7 +675,7 @@
     },
     {
         "most_popular": false   ,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2020/01/quad_bike-400x270.png",
         "image_text": "Desert Safari With Dune Buggy 1 Hour (Shared Buggy For 2)",
         "event_name": "4x4 Pickup",
@@ -769,7 +771,7 @@
     },
     {   
         "most_popular": true,
-        "banner_image_url": "https://www.desertsafariuae.ae/tours/desert-safari-with-buggy-30-mins-platinum/",
+        "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
         "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2017/09/Delux-400x270.jpg",
         "image_text": "VIP Desert Safari",
         "event_name": "Serving on table/AC room",
@@ -863,5 +865,4 @@
             }
         ]
     }
-    
 ]
