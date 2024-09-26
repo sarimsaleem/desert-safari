@@ -1,13 +1,14 @@
 import React from 'react'
-import "./dubaitour.css"
-import data from "../../Json/Tours.json"
 import { FaPersonWalkingLuggage } from 'react-icons/fa6'
+import './main.css'
+import data from "../../Json/Cruise.json"
 
-const DubaiTours = () => {
 
+const  Cruise = () => {
   return (
-    <div className='tour-parent'>
-      <div className="container">
+    <>
+    <div className="cruise">
+    <div className="container">
         <div className='faqs-parent dubai-head'>
           Book and Go  <span className='faqs'> _____ </span><FaPersonWalkingLuggage className='personLuagage' />
         </div>
@@ -34,12 +35,13 @@ const DubaiTours = () => {
             </div>
           ))}
         </div>
-        <div className="view-more">
+        <div className="view-more2">
           <button>View More</button>
         </div>
       </div>
     </div>
+    </>
   )
 }
 
-export default DubaiTours
+export default Cruise

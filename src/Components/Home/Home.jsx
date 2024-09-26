@@ -5,6 +5,7 @@ import Cart from "../Cart/Cart"
 import ActivitiesCard from '../Activities/ActivitiesCard';
 import DubaiTours from '../DubaiTours/DubaiTours';
 import ComboTours from '../ComboTours/ComboTours';
+import Cruise from '../CRUISE';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
     <ActivitiesCard/>
     <DubaiTours/>
     <ComboTours/>
+    <Cruise/>
     <Expandable/>
     <Cart/>
 
