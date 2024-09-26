@@ -1,0 +1,50 @@
+.logo {
+    width: 150px;
+}
+
+.nav-link-parent {
+    display: inline-block; 
+    position: relative; 
+    margin: 0 10px; 
+}
+
+.nav-link-parent:hover {
+    border-bottom: 1px solid #de3030; 
+}
+
+.nav-links {
+    display: inline-block; 
+    font-weight: 500;
+    font-size: 16px;
+    color: #555e69;
+    text-decoration: none; 
+    padding: 0px; 
+}
+
+.nav-links:hover {
+    color: #de3030;
+    border-bottom: 1px solid #de3030; 
+}
+
+#basic-nav-dropdown {
+    display: inline-block;
+    margin: 0 10px; 
+    padding: 0; 
+    font-weight: 500;
+    font-size: 16px;
+    color: #555e69;
+}
+
+#basic-nav-dropdown:hover {
+    color: #de3030;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;  
+    color: #de3030; 
+}
+
+.link{
+color: #555e69;
+text-decoration: none;
+}

@@ -1,0 +1,74 @@
+.contact-crousel{
+    background-image: url(../assets/header.jpg);
+    width: 100%;
+    height: 47vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    margin-bottom: 70px;
+}
+
+.contact-crousel-heading{
+    color: white;
+    font-size: 33px;
+    font-weight: 600;
+}
+.contact-subParent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 70px;
+    flex-direction: column;
+}
+.contact-subParent2{
+    width: 40%;
+
+}
+.label-contact{
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    line-height: 24px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #a0a6ad;
+
+}
+.contact-field-div{
+    margin: 20px 0;
+}
+:where(.css-dev-only-do-not-override-14qglws).ant-btn-default.ant-btn-outlined, :where(.css-dev-only-do-not-override-14qglws).ant-btn-default.ant-btn-dashed{
+    background: #de3030 ;
+    color: white;
+    font-size: 17px;
+    padding: 20px 40px;
+}
+:where(.css-dev-only-do-not-override-14qglws).ant-input-outlined:hover{
+    border-color: #ff6161;
+}
+:where(.css-dev-only-do-not-override-14qglws).ant-input-outlined{
+    border-color: #de3030;
+}
+:where(.css-dev-only-do-not-override-14qglws).ant-input-outlined:focus{
+    border-color: #fc0808;
+    box-shadow: 0 2px 2px rgba(255, 0, 0, 0.5);
+}
+:where(.css-dev-only-do-not-override-14qglws).ant-input:placeholder-shown{
+    padding: 10px;
+}
+
+.contact-subHead{
+    color: #de3030;
+    text-transform: capitalize;
+    margin-top: 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.contact-para{
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    line-height: 24px;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #555e69;
+}
