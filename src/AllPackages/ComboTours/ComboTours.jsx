@@ -1,22 +1,24 @@
 import React from 'react'
-import "./dubaitour.css"
-import data from "../../Json/Tours.json"
-import { FaPersonWalkingLuggage } from 'react-icons/fa6'
+import "./combotour.css"
+import data from "../JsonData/ComboTours.json"
 import { useNavigate } from 'react-router-dom'
+import header from "../../assets/header.jpg"
 
-const DubaiTours = () => {
+const ComboTours = () => {
   const navigate = useNavigate()
 
   const handleClick = (obj = {}) => {
     navigate("/details", { state: obj })
   }
   return (
-    <div className='tour-parent'>
-      <div className="container">
-        <div className='faqs-parent dubai-head'>
-          Book and Go  <span className='faqs'> _____ </span><FaPersonWalkingLuggage className='personLuagage' />
+    <div className="ComboTours">
+      <div className="image-detail-container">
+        <img src={header} alt="" />
+        <div className="image-text-container">
+          <h6 className='image-detail-text fs-1'>Dubai Tour Combo Packages</h6>
         </div>
-        <h2 className='act-sub-head dubai-head'>Dubai Sightseeing Tours</h2>
+      </div>
+      <div className='container'>
         <div className="row">
           {data?.map((item, index) => (
             <div key={index} className="col-md-4 mb-4">
@@ -33,18 +35,15 @@ const DubaiTours = () => {
                     </div>
                     {item?.price ? <h3 className="card-text"><sup className='currency'>AED</sup>{item.price}</h3> : null}
                   </div>
-                  {item?.book ? <button className="btn act-btn"><a href="">{item.book}</a></button> : null}
+                  {item?.book ? <button className=" act-btn"><a href="">{item.book}</a></button> : null}
                 </div>
               </div>
             </div>
           ))}
-        </div>
-        <div className="view-more">
-          <button>View More</button>
         </div>
       </div>
     </div>
   )
 }
 
-export default DubaiTours
+export default ComboTours

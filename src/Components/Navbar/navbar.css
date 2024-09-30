@@ -48,3 +48,18 @@
 color: #555e69;
 text-decoration: none;
 }
+.dropDawn-cont {
+    padding: 0px 20px;
+    width: 333px;
+}
+.drop-items{
+    padding: 10px 15px ;
+    font-size: 16px;
+    font-weight: 500;
+    color: #555e69;
+}
+.divider {
+    height: 1px;
+    background-color: #ccc;
+    margin: 0;
+}

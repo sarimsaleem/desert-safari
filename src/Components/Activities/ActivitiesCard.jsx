@@ -3,6 +3,7 @@ import data from '../../Json/Activity.json';
 import "./activities.css";
 import { FaPersonWalkingLuggage } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
+
 const ActivitiesCard = () => {
 
   const navigate = useNavigate()
@@ -35,7 +36,7 @@ const ActivitiesCard = () => {
                     </div>
                     {item?.price ? <h3 className="card-text"><sup className='currency'>AED</sup>{item.price}</h3> : null}
                   </div>
-                  {item?.book ? <button className="btn act-btn"><a href="">{item.book}</a></button> : null}
+                  {item?.book ? <button className=" act-btn"><a href="">{item.book}</a></button> : null}
                 </div>
               </div>
             </div>

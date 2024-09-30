@@ -1,13 +1,14 @@
 [
-    {   
+    {
         "most_popular": true,
         "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
-        "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/09/dho-cruise-400x270.jpg",
-        "image_text": "Dhow Cruise Dinner",
-        "event_name": "Inc. 5% VAT",
+        "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2020/01/quad_bike-400x270.png",
+        "section-heading" : "Quad Biking Dubai",
+        "image_text": "Quad Bike (1 Hour)",
+        "event_name": "Instant confirmation",
         "special_note": "Pickup and dropoff available in Dubai, Sharjah, and Ajman (within the pickup zone). Contact us for any inquiry.",
-        "price": "110",
-        "book":"Book Now", 
+        "price": "500",
+        "book": "Book Now",
         "description": "Experience the Evening Desert Safari in Dubai for an unforgettable blend of adventure, culture, and relaxation. Enjoy 4x4 Pickup, sandboarding, camel rides, and a traditional Bedouin-style camp with live entertainment. Enjoy a delicious buffet and barbecue dinner in the rich heritage of the Arabian desert. Join us for an evening of excitement, culture, and breathtaking scenery.",
         "content": [
             {
@@ -124,15 +125,16 @@
             }
         ]
     },
-    {   
+    {
         "most_popular": true,
         "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
-        "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/09/abudhabi-Marina-Cruise-Dinner-400x270.jpg",
-        "image_text": "Abu Dhabi City Tour + Marina Cruise Dinner",
-        "event_name": "Inc. 5% VAT",
+        "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2020/01/quad_bike_1-400x270.png",
+        "section-heading" : "Quad Biking Dubai",
+        "image_text": "Quad Bike ( 2 Hours )",
+        "event_name": "Instant confirmation",
         "special_note": "Pickup and dropoff available in Dubai, Sharjah, and Ajman (within the pickup zone). Contact us for any inquiry.",
-        "price": "280",
-        "book":"Book Now", 
+        "price": "800",
+        "book": "Book Now",
         "description": "Experience the Evening Desert Safari in Dubai for an unforgettable blend of adventure, culture, and relaxation. Enjoy 4x4 Pickup, sandboarding, camel rides, and a traditional Bedouin-style camp with live entertainment. Enjoy a delicious buffet and barbecue dinner in the rich heritage of the Arabian desert. Join us for an evening of excitement, culture, and breathtaking scenery.",
         "content": [
             {
@@ -249,17 +251,18 @@
             }
         ]
     },
-    {   
+    {
         "most_popular": true,
         "banner_image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/12/header.jpg",
-        "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2018/09/Abu-Dhabi-City-Tour-Dhow-Cruise-Dinner-400x270.jpg",
-        "image_text": "Abu Dhabi City Tour + Dhow Cruise Dinner",
-        "event_name": "Inc. 5% VAT",
+        "image_url": "https://www.desertsafariuae.ae/wp-content/uploads/2020/01/quad_bike_2-400x270.png",
+        "section-heading" : "Quad Biking Dubai",
+        "image_text": "Quad Bike ( 4 Hours )    ",
+        "event_name": "Instant confirmation",
         "special_note": "Pickup and dropoff available in Dubai, Sharjah, and Ajman (within the pickup zone). Contact us for any inquiry.",
-        "price": "225",
-        "book":"Book Now", 
+        "price": "1,200",
+        "book": "Book Now",
         "description": "Experience the Evening Desert Safari in Dubai for an unforgettable blend of adventure, culture, and relaxation. Enjoy 4x4 Pickup, sandboarding, camel rides, and a traditional Bedouin-style camp with live entertainment. Enjoy a delicious buffet and barbecue dinner in the rich heritage of the Arabian desert. Join us for an evening of excitement, culture, and breathtaking scenery.",
-       "content": [
+        "content": [
             {
                 "title": "The package includes",
                 "hideItemIcon": false,

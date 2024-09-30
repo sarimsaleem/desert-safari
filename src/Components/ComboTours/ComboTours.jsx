@@ -2,7 +2,15 @@ import React from 'react'
 import data from "../../Json/ComboTours.json"
 import { FaPersonWalkingLuggage } from 'react-icons/fa6';
 import "./combotours.css"
+import { useNavigate } from 'react-router-dom';
 const ComboTours = () => {
+
+    const navigate = useNavigate()
+
+    const handleClick = (obj = {}) => {
+      navigate("/details", { state: obj })
+    }
+
     return (
         <div className='comboTours'>
             <div className="container">

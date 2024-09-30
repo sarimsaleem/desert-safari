@@ -104,6 +104,7 @@
     text-transform: capitalize;
     background: #434a54;
     padding: 7px 20px;
+    border: none;
 }
 .act-btn:hover {
     background: #434a54;
@@ -112,6 +113,7 @@
     color: #fff;
     text-decoration: none;
 }
+
 
 .image-text {
     position: absolute;
@@ -128,6 +130,9 @@
 
 .act-card:hover .image-text {
     color: #de3030; 
+}
+.card-img-top{
+    cursor: pointer;
 }
 
 .image-text:hover {

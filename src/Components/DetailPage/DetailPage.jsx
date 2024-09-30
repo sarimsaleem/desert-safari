@@ -5,7 +5,7 @@ import "./detail.css"
 const DetailPage = () => {
   const location = useLocation();
   const reciveData = location.state;
-  // bookingData
+
   return (
     <div className='detail'>
       <div className="image-detail-container">
@@ -24,58 +24,27 @@ const DetailPage = () => {
         </div> : null}
         {reciveData?.description ? <div className="description">{reciveData.description}</div> : null}
 
-        {reciveData?.package_inclusions ? (
-          <>
-            <h2 className='detail-head'>Package Inclusions</h2>
-            <div className="row">
-              {reciveData.package_inclusions.map((item, index) => (
-                <div key={index} className="col-6">
-                  <li className="detail-li d-flex align-items-center">
-                    <FaCheck style={{ color: 'red', marginRight: '8px' }} />
-                    {item.item}
-                    {item.description && <span>: {item.description}</span>}
-                  </li>
-                </div>
-              ))}
+        {reciveData?.content && reciveData?.content?.map((obj, index) => {
+          return (
+            <div key={index}>
+              <h2 className='detail-head'>{obj?.title}</h2>
+              <div className="row">
+                {obj.data.map((chilObj, childIndex) => (
+                  <div key={childIndex} className="col-6">
+                    <li className="detail-li d-flex align-items-center">
+                      {!obj?.hideItemIcon && <FaCheck style={{ color: 'red', marginRight: '8px' }} />}
+                      <div>
+                        <p style={{ margin: 0 }}>{chilObj.item}  {chilObj.itemDescription && <span>: {chilObj.itemDescription}</span>}</p>
+                        {chilObj.description ? <p style={{ margin: 0 }} >{chilObj.description}</p> : null}
+                        {obj?.book ? <div className="detail-btn"><button>{obj.book}</button></div> : null}
+                      </div>
+                    </li>
+                  </div>
+                ))}
+              </div>
             </div>
-          </>
-        ) : null}
-
-
-       {reciveData?.timings?.dropoff_time && reciveData?.timings?.pickup_time ? (<>
-          <h2 className='detail-head'>Timings</h2>
-          <div className="row">
-            <div className="col-6">
-              <li className="detail-li d-flex align-items-center ">
-                <FaCheck style={{ color: 'red', marginRight: '8px' }} />
-                Pickup Time: {reciveData.timings.pickup_time}
-              </li>
-            </div>
-            <div className="col-6">
-              <li className="detail-li d-flex align-items-center ">
-                <FaCheck style={{ color: 'red', marginRight: '8px' }} />
-                Dropoff Time: {reciveData.timings.dropoff_time}
-              </li>
-            </div>
-          </div>
-        </>): null}
-
-        {reciveData?.notes ? (
-          <>
-            <h2 className='detail-head'>Notes</h2>
-            <div className="row">
-              {reciveData.notes.map((note, index) => (
-                <div key={index} className="col-6">
-                  <li className="detail-li d-flex align-items-centerx">
-                    <FaCheck style={{ color: 'red', marginRight: '8px' }} />
-                    {note.text}
-                  </li>
-                </div>
-              ))}
-            </div>
-          </>
-        ) : null}
-        {reciveData?.book ?<div className="detail-btn"><button>{reciveData.book}</button></div> :null}
+          )
+        })}
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 .crousel {
-    position: relative; /* Carousel container to position the WhatsApp icon */
+    position: relative;
 }
 
 .crousel-image {
@@ -7,12 +7,10 @@
 }
 
 .whatsappLogo {
-    /* color: green; */
     position: fixed; 
     font-size: 50px;
     bottom: 50px;  
     left: 20px;
     z-index: 10;
-    pointer-events: none; 
     cursor: pointer;
 }

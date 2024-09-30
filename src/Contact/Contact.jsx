@@ -26,10 +26,16 @@ const Contact = () => {
                 <h1 className='contact-crousel-heading'>Contact Us</h1>
             </div>
             <div className="contact-subParent container ">
-            <h1 className='contact-subHead'>Please Fill The Form Below</h1>
-            <p className='contact-para'>We always value feedback from our customers. If you have any questions or comments, please use the form below to contact us directly. We make every effort to respond to all requests within an hour or two. </p>
+                <div className="row contact-text-container">
+                    <div className="col-md-6">
+                        <div className="contact-text-container">
+                            <h1 className='contact-subHead'>Please Fill The Form Below</h1>
+                            <p className='contact-para'>We always value feedback from our customers. If you have any questions or comments, please use the form below to contact us directly. We make every effort to respond to all requests within an hour or two. </p>
+                        </div>
+                    </div>
+                </div>
                 <div className=" contact-subParent2">
-                   
+
                     <Formik
                         initialValues={initialValues}
                         validationSchema={validationSchema}
