@@ -2,7 +2,7 @@ import React from 'react';
 import data from '../../Json/Activity.json';
 import "./activities.css";
 import { FaPersonWalkingLuggage } from 'react-icons/fa6';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ActivitiesCard = () => {
 
@@ -43,7 +43,7 @@ const ActivitiesCard = () => {
           ))}
         </div>
         <div className="view-more">
-          <button>View More</button>
+          <button><Link className="viewmore2" to="/dubaicitytour">View More</Link></button>
         </div>
       </div>
     </div>

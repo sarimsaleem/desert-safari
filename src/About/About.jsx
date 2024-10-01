@@ -3,7 +3,7 @@ import "./About.css"
 
 const About = () => {
     return (
-        <div className="parent">
+        <div className="about-parent">
             <div className='about-crousel'>
                 <h1 className='about-crousel-heading'>About Desert Safari UAE</h1>
             </div>

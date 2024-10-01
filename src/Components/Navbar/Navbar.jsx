@@ -10,9 +10,9 @@ import { Row, Col } from 'react-bootstrap';
 
 const Header = () => {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="bg-body-tertiary header">
             <Container>
-                <Navbar.Brand href="/"><img className='logo' src={logo} alt="Logo" /></Navbar.Brand>
+                <Navbar.Brand className='navbar-brand' href="/"><img className='logo' src={logo} alt="Logo" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
@@ -24,23 +24,24 @@ const Header = () => {
                         </div>
                         <div className='nav-link-parent'>
                             <NavDropdown className="nav-links" title="Desert Safari Dubai" id="basic-nav-dropdown">
-                                <div className="dropDawn-cont">
+                                <div className="dropDawn-cont1">
                                     <Row>
                                         <Col md={6}>
-                                            <NavDropdown.Item className='drop-items' >Action</NavDropdown.Item>
+                                            <NavDropdown.Item className='drop-items'><Link className='dropDownLinks' to="/evening-desert-safari">Evening Desert Safari</Link></NavDropdown.Item>
+                                            <div className='divider'></div> 
+                                            <NavDropdown.Item className='drop-items'><Link className='dropDownLinks'  to="/overnight-desert-safari">Overnight Desert Safari</Link></NavDropdown.Item>
                                             <div className='divider'></div>
-                                            <NavDropdown.Item className='drop-items'>Another action</NavDropdown.Item>
+                                            <NavDropdown.Item className='drop-items'><Link className='dropDownLinks' to="/luxury-desert-safari">Luxury Desert Safari</Link></NavDropdown.Item>
                                             <div className='divider'></div>
-                                            <NavDropdown.Item className='drop-items'>Something</NavDropdown.Item>
-                                            <div className='divider'></div>
-                                            <NavDropdown.Item className='drop-items'>Something</NavDropdown.Item>
+                                            <NavDropdown.Item className='drop-items'><Link className='dropDownLinks' to="/private-desert-safari">Private Desert Safari</Link></NavDropdown.Item>
                                         </Col>
                                         <Col md={6}>
-                                            <NavDropdown.Item className='drop-items'>Separated link</NavDropdown.Item>
+                                            <NavDropdown.Item className='drop-items'><Link className='dropDownLinks' to="/morning-desert-safari">Morning Desert Safari</Link></NavDropdown.Item>
                                             <div className='divider'></div>
-                                            <NavDropdown.Item className='drop-items'>Separated link</NavDropdown.Item>
+                                            <NavDropdown.Item className='drop-items'><Link className='dropDownLinks' to="/vip-desert-safari">VIP Desert Safari</Link></NavDropdown.Item>
                                             <div className='divider'></div>
-                                            <NavDropdown.Item className='drop-items'>Separated link</NavDropdown.Item>
+                                            <NavDropdown.Item className='drop-items'><Link className='dropDownLinks' to="/quadbike-desert-safari">Desert Safari With Quad Bike</Link></NavDropdown.Item>
+                                            <div className='divider'></div>
                                         </Col>
                                     </Row>
                                 </div>
@@ -52,18 +53,18 @@ const Header = () => {
                                 <div className="dropDawn-cont">
                                     <Row>
                                         <Col md={6}>
-                                            <NavDropdown.Item className='drop-items'><Link to="/combotours">Combo Tour</Link></NavDropdown.Item>
+                                            <NavDropdown.Item className='drop-items'><Link className='dropDownLinks' to="/combotours">Combo Tour</Link></NavDropdown.Item>
                                             <div className='divider'></div>
-                                            <NavDropdown.Item className='drop-items'><Link to="/cruisedinner">Cruise Dinner</Link></NavDropdown.Item>
+                                            <NavDropdown.Item className='drop-items'><Link className='dropDownLinks' to="/cruisedinner">Cruise Dinner</Link></NavDropdown.Item>
                                             <div className='divider'></div>
-                                            <NavDropdown.Item className='drop-items'><Link to="/dubaicitytour">Dubai City Tour</Link></NavDropdown.Item>
+                                            <NavDropdown.Item className='drop-items'><Link className='dropDownLinks' to="/dubaicitytour">Dubai City Tour</Link></NavDropdown.Item>
                                         </Col>
                                         <Col md={6}>
-                                            <NavDropdown.Item className='drop-items'><Link to="/abudhabicitytour">Abu Dhabi Tour</Link></NavDropdown.Item>
+                                            <NavDropdown.Item className='drop-items'><Link className='dropDownLinks' to="/abudhabicitytour">Abu Dhabi Tour</Link></NavDropdown.Item>
                                             <div className='divider'></div>
-                                            <NavDropdown.Item className='drop-items'><Link to="/quadbike">Quadbike</Link></NavDropdown.Item>
+                                            <NavDropdown.Item className='drop-items'><Link className='dropDownLinks' to="/quadbike">Quadbike</Link></NavDropdown.Item>
                                             <div className='divider'></div>
-                                            <NavDropdown.Item className='drop-items'><Link to="/sightseeing">Sight Seeing</Link></NavDropdown.Item>
+                                            <NavDropdown.Item className='drop-items'><Link className='dropDownLinks' to="/sightseeing">Sight Seeing</Link></NavDropdown.Item>
                                         </Col>
                                     </Row>
                                 </div>

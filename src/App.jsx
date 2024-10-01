@@ -15,6 +15,13 @@ import CruiseDinner from './AllPackages/CruiseDinner/CruiseDinner';
 import DubaiCityTour from "./AllPackages/DubaiCityTour/DubaiCityTour"
 import QuadBike from "./AllPackages/QuadBike/QuadBike"
 import SightSeeing from "./AllPackages/SightSeeing/SightSeeing"
+import EveningDesertSafari from './DesertSafariDubai/Evening/EveningDesertSafari';
+import OvernightDesertSafari from './DesertSafariDubai/Overnight/OvernightDesertSafari';
+import LuxuryDesertSafari from './DesertSafariDubai/Luxury/LuxuryDesertSafari';
+import MorningDeertSafari from './DesertSafariDubai/Morning/MorningDeertSafari';
+import PrivateDesertSafari from './DesertSafariDubai/Private/PrivateDesertSafari';
+import QuadbikeDesertSafari from './DesertSafariDubai/QuadBike/QuadbikeDesertSafari';
+import VipDesertSafari from './DesertSafariDubai/VIP/VipDesertSafari';
 
 function App() {
 
@@ -33,6 +40,13 @@ function App() {
           <Route path="/abudhabicitytour" element={<AbuDhabiTour/>} />
           <Route path="/quadbike" element={<QuadBike/>} />
           <Route path="/sightseeing" element={<SightSeeing/>} />
+          <Route path="/evening-desert-safari" element={<EveningDesertSafari/>} /> 
+          <Route path="/overnight-desert-safari" element={<OvernightDesertSafari/>} /> 
+          <Route path="/luxury-desert-safari" element={<LuxuryDesertSafari/>} /> 
+          <Route path="/morning-desert-safari" element={<MorningDeertSafari/>} /> 
+          <Route path="/private-desert-safari" element={<PrivateDesertSafari/>} /> 
+          <Route path="/quadbike-desert-safari" element={<QuadbikeDesertSafari/>} /> 
+          <Route path="/vip-desert-safari" element={<VipDesertSafari/>} /> 
         </Routes>
         <SubFooter />
         <Footer />

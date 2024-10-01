@@ -93,9 +93,9 @@ const Contact = () => {
                                     <ErrorMessage name="message" component="div" style={{ color: 'red', marginTop: '10px' }} />
                                 </div>
 
-                                <Button htmlType="submit" style={{ marginTop: '16px' }}>
+                                <button htmlType="submit" className='contact-btn'>
                                     Send
-                                </Button>
+                                </button>
                             </Form>
                         )}
                     </Formik>

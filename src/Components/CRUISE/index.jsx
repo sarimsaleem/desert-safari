@@ -2,7 +2,7 @@ import React from 'react'
 import { FaPersonWalkingLuggage } from 'react-icons/fa6'
 import './main.css'
 import data from "../../Json/Cruise.json"
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const Cruise = () => {
@@ -11,6 +11,7 @@ const Cruise = () => {
     const handleClick = (obj = {}) => {
       navigate("/details", { state: obj })
     }
+
     return (
         <>
             <div className="cruise">
@@ -42,7 +43,7 @@ const Cruise = () => {
                         ))}
                     </div>
                     <div className="view-more2">
-                        <button>View More</button>
+                        <button><Link to="/cruisedinner" className='viewMore'>View More</Link></button>
                     </div>
                 </div>
             </div>

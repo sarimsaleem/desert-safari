@@ -9,13 +9,19 @@ const DetailPage = () => {
   return (
     <div className='detail'>
       <div className="image-detail-container">
-        <img src={reciveData.banner_image_url} alt="" />
+        {reciveData?.banner_image_url ? <img src={reciveData.banner_image_url} alt="" /> : null}
         <div className="image-text-container">
-          <h6 className='image-detail-text fs-1'>{reciveData.image_text}</h6>
-          <h6 className='image-from'>From</h6>
-          <h6 className='image-detail-text'>
-            <sup className='currency2'>AED</sup>{reciveData.price}
-          </h6>
+          {reciveData?.image_text ? <h6 className='image-detail-text fs-1'>{reciveData.image_text}</h6> : null}
+          {reciveData?.price ? (
+            <div className="price-container">
+              <h6 className="image-from">From</h6>
+              <h6 className="image-detail-text">
+                <sup className="currency2">AED</sup>
+                {reciveData.price}
+              </h6>
+            </div>
+          ) : null}
+
         </div>
       </div>
       <div className="container">

@@ -2,7 +2,7 @@ import React from 'react'
 import "./dubaitour.css"
 import data from "../../Json/Tours.json"
 import { FaPersonWalkingLuggage } from 'react-icons/fa6'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const DubaiTours = () => {
   const navigate = useNavigate()
@@ -39,8 +39,8 @@ const DubaiTours = () => {
             </div>
           ))}
         </div>
-        <div className="view-more">
-          <button>View More</button>
+        <div className="view-more2">
+          <button><Link to="/sightseeing" className="viewMore">View More</Link></button>
         </div>
       </div>
     </div>
