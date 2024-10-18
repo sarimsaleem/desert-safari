@@ -3,10 +3,7 @@ import Crousel from '../Crousel/Crousel';
 import Expandable from '../Accordion/Accordion';
 import Cart from "../Cart/Cart"
 import HomeSectionCard from '../HomeSectionCard/HomeSectionCard';
-import DubaiTours from '../DubaiTours/DubaiTours';
-import ComboTours from '../ComboTours/ComboTours';
-import Cruise from '../CRUISE';
-import  {fetchCategories} from '../../DATA/function'; 
+import  {fetchCategories} from '../../Utils/function'; 
 const Home = () => {
 
   const [categoires, setCategoires] = useState([]);

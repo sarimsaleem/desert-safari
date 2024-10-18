@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { FaCheck } from "react-icons/fa";
 import "./package.css"
-import { fetchProduct } from '../../DATA/function';
+import { fetchProduct } from '../../Utils/function';
 
 const Package = () => {
   const location = useLocation();

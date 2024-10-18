@@ -3,8 +3,8 @@ import React, {useEffect, useState} from 'react'
 import "./packages.css"
 import { useNavigate, useParams } from 'react-router-dom'
 import header from "../assets/header.jpg"
-import {fetchProducts, fetchCategory} from '../DATA/function';
-import {convertToSlug} from '../DATA/helper';
+import {fetchProducts, fetchCategory} from '../Utils/function';
+import {convertToSlug} from '../Utils/helper';
 
 const Packages = (props) => {
 

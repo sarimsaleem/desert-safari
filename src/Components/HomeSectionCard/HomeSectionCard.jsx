@@ -4,8 +4,8 @@ import { FaPersonWalkingLuggage } from 'react-icons/fa6';
 import { Link, useNavigate } from 'react-router-dom';
 import { db } from "../../Firebase/FirebaseConfig"; // Ensure your Firebase config is imported
 import { collection, query, where, getDocs } from "firebase/firestore";
-import {fetchProducts} from '../../DATA/function';
-import {convertToSlug} from '../../DATA/helper';
+import {fetchProducts} from '../../Utils/function';
+import {convertToSlug} from '../../Utils/helper';
 import { BiCategory } from 'react-icons/bi';
 
 
