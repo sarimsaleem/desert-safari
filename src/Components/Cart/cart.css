@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.cart-padding {
+  padding-block: 70px; 
+}
+
+.content {
+  background-color: black;
+  color: white;
+  padding: 30px 25px;
+  position: relative;
+  width: 100%; 
+  border-radius: 5px; 
+  overflow: hidden; 
+}
+
+.stripe {
+  width: 10px; 
+  background-color: var(--color); 
+  position: absolute;
+  left: 0; 
+  top: 0;
+  bottom: 0; 
+}
+
+.corner {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 70px 70px 0; 
+  border-color: transparent var(--color) transparent transparent; 
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.main-title {
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.sub-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+  
+.paragraph {
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+.cart-btn {
+  background-color: var(--color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.cart-btn:hover {
+  background-color: var(--color); 
+}

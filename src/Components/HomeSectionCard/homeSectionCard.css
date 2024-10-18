@@ -1,0 +1,192 @@
+.card-section {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card-section.light .act-sub-head, .card-section.light .faqs-parent {
+    color: var(--white);
+}
+.card-section.dark .act-sub-head {}
+
+.act-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+    border: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.act-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-top {
+    transition: transform 0.7s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.act-card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.image-container {
+    position: relative;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    z-index: 1; 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.act-card:hover .image-container::before {
+    opacity: 1; 
+}
+
+.act-card:hover .image-container::before {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.7) 75%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.activities-parent {
+    padding-block: 70px;
+}
+
+.act-main-heading {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.act-sub-head {
+    color: var(--category-color);
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 5px 0 20px 0;
+}
+
+.card-sub-body {
+    display: flex;
+    justify-content: space-between;
+}
+.title-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    /* gap: 10px; */
+  }
+.card-title {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    line-height: 24px;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text-color);
+    flex-grow: 1;
+}
+
+
+
+.card-text {
+    color: var(--color);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.currency {
+    font-size: 15px;
+    top: -0.9em;
+}
+
+.act-btn {
+    border-radius: 20px;
+    text-transform: capitalize;
+    background: var(--category-color);
+    padding: 7px 20px;
+    border: none;
+}
+.act-btn:hover {
+    background: var(--category-color);
+}
+.act-btn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.image-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 2; 
+    transition: color 0.3s ease; 
+}
+
+.act-card:hover .image-text {
+    color: var(--color); 
+}
+.card-img-top{
+    cursor: pointer;
+}
+
+.image-text:hover {
+    color: var(--color); 
+}
+
+.most-popular {
+    font-size: 15px;
+    font-weight: 600;
+    -webkit-animation-name: flash;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: flash;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    color: var(--color);
+    display: block;
+    margin: 0 0 14px;
+    white-space: nowrap;
+    margin: 0 0 8px 0;
+}
+
+@-webkit-keyframes flash {
+    0%, 100% { opacity: 1; } 
+    50% { opacity: 0; } 
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.view-more{
+    display: flex;
+    justify-content: center;
+}
+.view-more button{
+    border: none;
+    border-radius: 7px;
+    background: var(--category-color);
+    padding: 10px 30px;
+    color: white;
+    margin-top: 30px;
+    font-weight: 700;
+}

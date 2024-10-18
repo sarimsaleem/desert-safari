@@ -1,0 +1,16 @@
+.crousel {
+    position: relative;
+}
+
+.crousel-image {
+    width: 100vw;
+}
+
+.whatsappLogo {
+    position: fixed; 
+    font-size: 50px;
+    bottom: 50px;  
+    left: 20px;
+    z-index: 10;
+    cursor: pointer;
+}
