@@ -28,7 +28,7 @@ const HomeSectionCard = ({data}) => {
 
   useEffect(() => {
   if(data?._id){
-    console.log(data?._id)
+    // console.log(data?._id)
     loadProducts(data?._id);
   }
     
@@ -37,7 +37,7 @@ const HomeSectionCard = ({data}) => {
   const loadProducts = async (categoryId) => {
     fetchProducts({categoryId})
       .then(res => {
-        console.log('getCategoire',res)
+        // console.log('getCategoire',res)
         setProducts(res)
       })
       .catch(error => {
@@ -46,7 +46,7 @@ const HomeSectionCard = ({data}) => {
       })
   };
 
-  console.log('data',data)
+  // console.log('data',data)
 
   return products?.length ? (
     <div className={`activities-parent card-section ${data?.image_url ? 'light' : "dark"}`} style={data?.image_url ? {backgroundImage: `url(${data?.image_url})`} : {}}>

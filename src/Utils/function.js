@@ -6,7 +6,7 @@ const PARENT_COLLECTION_NAME = "categories";
 
 export const fetchProducts = async (payload) => {
   try {
-    console.log(payload,"payload")
+    // console.log(payload,"payload")
     let customQuery;
     if(payload?.categoryId) {
       customQuery = query(collection(db, "products"), where("category", "==", payload?.categoryId));

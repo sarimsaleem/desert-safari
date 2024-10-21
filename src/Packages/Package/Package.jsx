@@ -1,38 +1,40 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { FaCheck } from "react-icons/fa";
 import "./package.css"
 import { fetchProduct } from '../../Utils/function';
+import Booking from '../../Components/Booking/Booking';
 
 const Package = () => {
-  const location = useLocation();
+  // const location = useLocation();
   const params = useParams();
-console.log(params)
-  
+  console.log(params)
+
 
   const [product, setProduct] = useState({});
-
+  
 
   useEffect(() => {
-    if(params?.productId){
-      console.log('productId',params?.productId)
+    if (params?.productId) {
+      console.log('productId', params?.productId)
       loadProduct(params?.productId);
     }
-      
-    }, [params]);
-  
-    const loadProduct = (productId) => {
-      fetchProduct(productId)
-        .then(res => {
-          console.log('loadProduct',res)
-          setProduct(res)
-        })
-        .catch(error => {
-          console.error("Error fetching products: ", error);
-          setProduct({})
-        })
-    };
-  
+
+  }, [params]);
+
+  const loadProduct = (productId) => {
+    fetchProduct(productId)
+      .then(res => {
+        console.log('loadProduct', res)
+        setProduct(res)
+      })
+      .catch(error => {
+        console.error("Error fetching products: ", error);
+        setProduct({})
+      })
+  };
+  console.log(product, "productproduct")
+
   // const {id} = useParams()
 
   // const item = data.find((item) => item.id === id)
@@ -83,78 +85,11 @@ console.log(params)
         })}
       </div>
 
-      <div className="form ">
-        <div className="container">
-          <h3 className='detail-BookNow'>Book Tour</h3>
-          <div className="subParent1">
-            <div className="column-child">
-              <h4>Tour Name</h4>
-            </div>
-            <div className="column-child">
-              <h4>Price Per Adult	</h4>
-            </div>
-            <div className="column-child">
-              <h4>Price Per Child</h4>
-            </div>
-          </div>
-          <div className="subParent2">
-            <div className="column-child2">
-              <h4>{product?.image_text}</h4>
-            </div>
-            <div className="column-child2">
-              <h4> {product?.price}</h4>
-            </div>
-            <div className="column-child2">
-              <h4> {product?.price}</h4>
-            </div>
-          </div>
-          <div className="subParent3">
-            <div className="row">
-              <div className="col-md-3">
-                <label className='subParent3-label'>Tour Date</label>
-                <div className="input-btn" >
-                  <input type="date" className='date' />
-                </div>
-              </div>
-              <div className="col-md-3">
-                <label className='subParent3-label'>Adult</label>
-                <div className="input-btn">
-                  <button>-</button>
-                  <input type="number"/>
-                  <button>+</button>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <label className='subParent3-label'>Child (Age 3-10)</label>
-                <div className="input-btn">
-                  <button>-</button>
-                  <input type="number" />
-                  <button>+</button>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <label className='subParent3-label'>Infant (Age 0-3)</label>
-                <div className="input-btn">
-                  <button>-</button>
-                  <input type="number" />
-                  <button>+</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="subParent4">
-              <h4>SUMMARY</h4>
-            <div className="subParent4-main-heading">
-              <h5>Subtotal</h5>
-              <h5>AED</h5>
-            </div>
-            <div className="subParent4-main-heading">
-              <h5>Total</h5>
-              <h5>AED</h5>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Booking
+        product={product}
+      />
+
+
     </div>
   );
 }

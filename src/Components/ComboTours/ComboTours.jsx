@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaPersonWalkingLuggage } from 'react-icons/fa6';
 import "./combotours.css"
 import { Link, useNavigate } from 'react-router-dom';
 import data from "../../Json/data"
 
 const ComboTours = () => {
-
+const [link,setLink] = useState()
     const navigate = useNavigate()
 
     const handleClick = (obj = {}) => {
@@ -45,7 +45,7 @@ const ComboTours = () => {
                     ))}
                 </div>
                 <div className="view-more">
-                    <button><Link className='viewmore2' to="/combotours">View More</Link></button>
+                    <button onClick={() => setLink("/combotours")}>View More</button>
                 </div>
             </div>
         </div>
