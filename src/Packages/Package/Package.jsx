@@ -10,9 +10,11 @@ const Package = () => {
   const params = useParams();
   console.log(params)
 
+  // const location = useLocation();
+  // const { product, category } = location.state || {};
 
   const [product, setProduct] = useState({});
-  
+
 
   useEffect(() => {
     if (params?.productId) {

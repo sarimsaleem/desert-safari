@@ -9,6 +9,7 @@
 .image-detail-container img {
   width: 100%;
   height: auto;
+  margin-bottom: 60px;
 }
 
 .image-text-container {

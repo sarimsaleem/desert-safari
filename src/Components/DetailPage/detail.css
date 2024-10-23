@@ -2,14 +2,6 @@
   padding-bottom: 70px;
 }
 
-.image-detail-container {
-  position: relative;
-}
-
-.image-detail-container img {
-  width: 100%;
-  height: auto;
-}
 
 .image-text-container {
   position: absolute;

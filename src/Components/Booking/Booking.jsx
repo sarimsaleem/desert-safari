@@ -42,7 +42,7 @@ const Booking = ({ product }) => {
             <h4>AED {product?.price}</h4>
           </div>
           <div className="column-child2">
-            <h4>AED {product?.price}</h4>
+            <h4>AED {childPrice }</h4>
           </div>
         </div>
         <div className="subParent3">

@@ -10,6 +10,7 @@ const Packages = (props) => {
 
   const navigate = useNavigate()
   const params = useParams();
+  console.log(params)
 
   // const query = new URLSearchParams(props.location.search);
 
@@ -41,9 +42,10 @@ const Packages = (props) => {
       fetchProducts({categoryId})
         .then(res => {
           setProducts(res)
+          console.log('loadProduct', res)
         })
         .catch(error => {
-          console.error("Error fetching products: ", error);
+          console.error("Error fetching products:", error);
           setProducts([])
         })
     };
@@ -52,7 +54,9 @@ const Packages = (props) => {
   const handleClick = (categoryData, packageData = {}) => {
     navigate(`/packages/${convertToSlug(categoryData?._id)}/${convertToSlug(packageData?._id)}`, { state: {
       category: categoryData,
-        productId: packageData?._id 
+        productId: packageData 
+        // yeh line change ki hai 
+        // productId: packageData?._id 
     } });
   };
 

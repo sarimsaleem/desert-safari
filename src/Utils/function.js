@@ -23,7 +23,7 @@ export const fetchProducts = async (payload) => {
 };
 export const fetchProduct = async (id) => {
 
-  const customQuery = query(collection(db, "products"), where("id", "==", id));
+  const customQuery = query(collection(db, "products"), where("_id", "==", id));
   const data = await getDocs(customQuery);
   
   const product = await data.docs.map(doc => ({
