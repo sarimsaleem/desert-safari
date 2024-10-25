@@ -54,9 +54,9 @@ const Packages = (props) => {
   const handleClick = (categoryData, packageData = {}) => {
     navigate(`/packages/${convertToSlug(categoryData?._id)}/${convertToSlug(packageData?._id)}`, { state: {
       category: categoryData,
-        productId: packageData 
+        // productId: packageData 
         // yeh line change ki hai 
-        // productId: packageData?._id 
+        productId: packageData?._id 
     } });
   };
 
