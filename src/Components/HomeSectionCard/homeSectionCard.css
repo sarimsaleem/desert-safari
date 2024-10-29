@@ -119,13 +119,13 @@
     color: white;
 }
 .act-btn:hover {
-    background: var(--category-color);
+    background: var(--color);
+    color: white;
 }
 
 .viewmore2{
     color: white;
     text-decoration: none;
-    color: white;
 }
 
 .image-text {

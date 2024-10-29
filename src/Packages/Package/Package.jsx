@@ -4,7 +4,6 @@ import { FaCheck } from "react-icons/fa";
 import "./package.css"
 import { fetchProduct } from '../../Utils/function';
 import Booking from '../../Components/Booking/Booking';
-
 const Package = () => {
   const params = useParams();
   const [product, setProduct] = useState({});

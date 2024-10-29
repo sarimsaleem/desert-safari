@@ -18,7 +18,7 @@ import Contact from './Contact/Contact';
 import Packages from './Packages/Packages';
 import Package from './Packages/Package/Package'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import BookingCard from './Components/BookingCard/BookingCard';
 
 function App() {
   return (
@@ -31,6 +31,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/packages/:categoryId" element={<Packages />} />
           <Route path="/packages/:categoryId/:productId" element={<Package />} /> 
+          <Route path="/card" element={<BookingCard/>} />
           {/* <Route path="/evening-desert-safari" element={<EveningDesertSafari/>} /> 
           <Route path="/overnight-desert-safari" element={<OvernightDesertSafari/>} /> 
           <Route path="/luxury-desert-safari" element={<LuxuryDesertSafari/>} /> 

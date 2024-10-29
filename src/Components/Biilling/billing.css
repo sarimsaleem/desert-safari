@@ -1,0 +1,50 @@
+
+.checkout-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+  
+  .checkout-btn:hover {
+    background-color: var(--color);
+  }
+  
+  .second-row-biling-form {
+    margin-top: 45px;
+  }
+  
+  
+  
+  .para-biling {
+    color: var(--text-color);
+  }
+  
+  .head-biling {
+    color: red;
+  }
+  
+  .typo-billing {
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+  
+  .ant-input {
+    min-height:40px ;
+    min-width: 200px; 
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 4px; 
+  }
+  
+  :where(.css-dev-only-do-not-override-14qglws).ant-input:placeholder-shown{
+    padding: 5px;
+  }
+  :where(.css-dev-only-do-not-override-14qglws).ant-input:placeholder-shown::placeholder{
+    font-size: 12px;
+  }

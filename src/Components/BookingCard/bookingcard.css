@@ -1,0 +1,113 @@
+.booking-card-wrapper {
+  padding-block: 50px;
+}
+
+.booking-card {
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fdfdfd;
+}
+
+.booking-summary {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.booking-table th,
+.booking-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.booking-table td {
+  color: var(--text-color);
+}
+
+.booking-table th {
+  background-color: var(--color);
+  color: white;
+}
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-control button {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.quantity-control input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+}
+
+
+.total-summary {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 270px;
+  border-radius: 8px;
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.total-summary h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.total-details {
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+}
+
+.total-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.total-item strong {
+  font-weight: 600;
+}
+
+.total-item span:last-child {
+  color: #e53935;
+  font-weight: bold;
+}
+.product-data{
+  text-align: start;
+}

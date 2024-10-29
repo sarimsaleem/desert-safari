@@ -159,12 +159,12 @@
   font-weight: 600;
   font-size: 16px;
 }
-.input-btn button {
+/* .input-btn button {
   border: none;
   width: 29px;
   height: 40px;
   background: #ada6a6;
-}
+} */
 
 .input-btn input{
   border: none;

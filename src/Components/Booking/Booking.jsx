@@ -1,23 +1,44 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import "./booking.css";
+import { Input, Typography } from 'antd';
 
 const Booking = ({ product }) => {
-
+  const navigate = useNavigate();
   const [tourDate, setTourDate] = useState('');
-  const [adults, setAdults] = useState(0);
+  const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const [infants, setInfants] = useState(0);
+  const [error, setError] = useState('');
 
   const adultPrice = product?.price || 0;
-  const childPrice = product?.price * 0.9 || 0; 
+  const childPrice = product?.price * 0.7 || 0;
+  const subtotal = adults * adultPrice + children * childPrice;
+  const total = subtotal;
+
+  const handleBooking = () => {
+    if (!tourDate) {
+      setError("Please select a tour date.");
+      return;
+    }
+    if (adults < 1) {
+      setError("At least one adult must be included.");
+      return;
+    }
+
+    navigate("/card", {
+      state: {
+        product,
+        bookingDetails: { tourDate, adults, children, infants, total }
+      }
+    });
+  };
 
   const handleAdd = (setFunc, value) => setFunc(value + 1);
   const handleSubtract = (setFunc, value) => setFunc(value > 0 ? value - 1 : 0);
 
-  // Calculate subtotal and total
-  const subtotal = adults * adultPrice + children * childPrice;
-  const total = subtotal;
-
-  console.log(product,"product")
+  // Get today's date in the required format for the min attribute
+  const today = new Date().toISOString().split("T")[0];
 
   return (
     <div className="form">
@@ -42,43 +63,47 @@ const Booking = ({ product }) => {
             <h4>AED {product?.price}</h4>
           </div>
           <div className="column-child2">
-            <h4>AED {childPrice }</h4>
+            <h4>AED {childPrice}</h4>
           </div>
         </div>
         <div className="subParent3">
           <div className="row">
             <div className="col-md-3">
-              <label className="subParent3-label">Tour Date</label>
+              <Typography className="subParent3-label">Tour Date</Typography>
               <div className="input-btn">
-                <input
+                <Input
                   type="date"
                   className="date"
                   value={tourDate}
-                  onChange={(e) => setTourDate(e.target.value)}
+                  onChange={(e) => {
+                    setTourDate(e.target.value);
+                    setError('');
+                  }}
+                  min={today}
                 />
               </div>
             </div>
             <div className="col-md-3">
-              <label className="subParent3-label">Adult</label>
+              <Typography className="subParent3-label">Adult</Typography>
               <div className="input-btn">
                 <button onClick={() => handleSubtract(setAdults, adults)}>-</button>
-                <input type="number" value={adults} readOnly />
+                <Input type="number" value={adults} readOnly />
                 <button onClick={() => handleAdd(setAdults, adults)}>+</button>
               </div>
             </div>
             <div className="col-md-3">
-              <label className="subParent3-label">Child (Age 3-10)</label>
+              <Typography className="subParent3-label">Child (Age 3-10)</Typography>
               <div className="input-btn">
                 <button onClick={() => handleSubtract(setChildren, children)}>-</button>
-                <input type="number" value={children} readOnly />
+                <Input type="number" value={children} readOnly />
                 <button onClick={() => handleAdd(setChildren, children)}>+</button>
               </div>
             </div>
             <div className="col-md-3">
-              <label className="subParent3-label">Infant (Age 0-3)</label>
+              <Typography className="subParent3-label">Infant (Age 0-3)</Typography>
               <div className="input-btn">
                 <button onClick={() => handleSubtract(setInfants, infants)}>-</button>
-                <input type="number" value={infants} readOnly />
+                <Input type="number" value={infants} readOnly />
                 <button onClick={() => handleAdd(setInfants, infants)}>+</button>
               </div>
             </div>
@@ -91,9 +116,18 @@ const Booking = ({ product }) => {
             <h5>AED {subtotal.toFixed(2)}</h5>
           </div>
           <div className="subParent4-main-heading">
-            <h5>Total</h5>
             <h5>AED {total.toFixed(2)}</h5>
           </div>
+        </div>
+        {error && <p className="error-message">{error}</p>}
+        <div className="book-parent">
+          <button
+            className="booknow-booking"
+            onClick={handleBooking}
+            disabled={!tourDate || adults < 1}
+          >
+            Book Now
+          </button>
         </div>
       </div>
     </div>
