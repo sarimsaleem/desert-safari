@@ -14,7 +14,7 @@
 .booking-summary {
   font-size: 30px;
   font-weight: 600;
-  color: var(--text-color);
+  color: var(--category-color);
 }
 
 .booking-table {
@@ -71,43 +71,53 @@
 }
 
 
-.total-summary {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  max-width: 270px;
-  border-radius: 8px;
-  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
-}
+  .total-summary {
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 270px;
+    border-radius: 8px;
+  }
 
-.total-summary h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-}
+  .total-summary h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
 
-.total-details {
-  display: flex;
-  flex-direction: column;
-  /* gap: 10px; */
-}
+  .total-details {
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+  }
 
-.total-item {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.1rem;
-  color: #444;
-}
+  .total-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    color: #444;
+  }
 
-.total-item strong {
-  font-weight: 600;
-}
+  .total-item strong {
+    font-weight: 600;
+  }
 
-.total-item span:last-child {
-  color: #e53935;
-  font-weight: bold;
-}
-.product-data{
-  text-align: start;
-}
+  .total-item span:last-child {
+    color: #e53935;
+    font-weight: bold;
+  }
+  .product-data{
+    text-align: start;
+  }
+
+  #Proceed-to-Payment{
+    padding: 17px 30px 19px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }

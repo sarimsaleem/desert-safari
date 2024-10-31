@@ -1,15 +1,41 @@
-import React from 'react'
-import "./billing.css"
-import { Row } from 'react-bootstrap'
-const Billing = () => {
+import React from 'react';
+import './orderinfo.css';
+import { Row, Col, Container, Button } from 'react-bootstrap';
+import { Form, Input, Typography, message } from 'antd';
+import { useLocation } from 'react-router-dom';
+import { addOrder } from '../../Utils/OrderFunction'; 
+
+const OrderInfo = () => {
+    const { Title, Paragraph } = Typography;
+    const [form] = Form.useForm();
+    const location = useLocation();
+    const orderDetails = location.state?.orderDetails;
+
+    const onFinish = async (orderInfo) => {
+        const combinedDetails = {
+            ...orderDetails,
+            orderInfo
+        };
+    
+        const customOrderId = orderDetails.orderId; 
+    
+        try {
+            const docId = await addOrder(combinedDetails, customOrderId);
+            message.success('Order details saved successfully!');
+            form.resetFields(); 
+        } catch (error) {
+            message.error('Failed to save order details.');
+        }
+    };
+    
+
     return (
         <Container>
             <Row>
                 <Col className="gutter-row" span={12}>
                     <div className="second-row-biling-form">
-                        <Title className='head-biling' style={{ color: "var(--text-color)" }} level={2}>Billing Details</Title>
+                        <Title className='head-biling' style={{ color: "var(--category-color)" }} level={2}>Customer Information</Title>
                         <Paragraph className='para-biling'>Please provide your billing details below. If you have any additional information, you may add it here as well.</Paragraph>
-
                         <Form
                             form={form}
                             layout="vertical"
@@ -107,6 +133,9 @@ const Billing = () => {
 
                             <Row>
                                 <Col span={24}>
+                                    <Form.Item>
+                                        <Button typz="submit" className='checkout-btn'>Submit</Button>
+                                    </Form.Item>
                                 </Col>
                             </Row>
                         </Form>
@@ -114,7 +143,7 @@ const Billing = () => {
                 </Col>
             </Row>
         </Container>
-    )
+    ); 
 }
 
-export default Billing
+export default OrderInfo;

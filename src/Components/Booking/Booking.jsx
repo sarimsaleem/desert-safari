@@ -116,6 +116,7 @@ const Booking = ({ product }) => {
             <h5>AED {subtotal.toFixed(2)}</h5>
           </div>
           <div className="subParent4-main-heading">
+            <h5>Total</h5>
             <h5>AED {total.toFixed(2)}</h5>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { AiOutlineClose } from 'react-icons/ai';
 import './bookingcard.css';
@@ -9,10 +9,11 @@ import { Form, Input, Typography, Button } from 'antd';
 const BookingCard = () => {
     const { Title, Paragraph } = Typography;
     const [form] = Form.useForm();
+    const navigate = useNavigate();
 
-    const onFinish = (values) => {
-        console.log('Form Values:', values);
-    };
+    // const onFinish = (values) => {
+    //     console.log('Form Values:', values);
+    // };
 
     const location = useLocation();
     const product = location.state?.product;
@@ -27,7 +28,7 @@ const BookingCard = () => {
         }
     ]);
 
-    const [packageQuantity, setPackageQuantity] = useState(1); // New state for package quantity
+    const [packageQuantity, setPackageQuantity] = useState(1); 
 
     const adultPrice = product?.price || 0;
     const childPrice = product?.price * 0.7 || 0;
@@ -41,8 +42,8 @@ const BookingCard = () => {
 
     const handleCheckout = async () => {
         try {
-            const billingDetails = await form.validateFields();
-
+            const orderInfo = await form.validateFields();
+            
             const orderId = uuidv4();
             const checkoutData = bookings.map((booking) => ({
                 packageId: booking._id,
@@ -51,37 +52,46 @@ const BookingCard = () => {
                 adults: booking.adults,
                 children: booking.children,
                 infants: booking.infants,
+                status :  "Pending",
                 subtotal: calculateSubtotalForOnePackage(booking) * packageQuantity,
-                status: "Pending",
                 createdAt: new Date().toISOString(),
             }));
+            
+            
+            const subtotalAmount = bookings.reduce((acc, booking) => acc + calculateSubtotalForOnePackage(booking), 0);
+            const totalAmount = packageQuantity * subtotalAmount;
 
-            const orderDetails = {
-                orderId,
-                bookings: checkoutData,
-                totalAmount: totalAmount.toFixed(2),
-                billingDetails,
+        const orderDetails = {
+            orderId,
+            bookings: checkoutData,
+            subtotalAmount: subtotalAmount.toFixed(2), 
+            totalAmount: totalAmount.toFixed(2), 
+            orderInfo,
             };
-
-            console.log("Proceed to payment with order details:", orderDetails);
+            
+            console.log("Order Details:", orderDetails); 
+            
+            navigate('/order-info', { state: { orderDetails } });
         } catch (error) {
             console.error("Validation Failed:", error);
         }
     };
+    
+    
 
     return (
         <div className="booking-card-wrapper" style={{ maxWidth: '100%', overflowX: 'hidden' }}>
             <Row gutter={20}>
                 <Col className="gutter-row" span={12}>
                     <div className="booking-card">
-                        <h1 className='booking-summary'>Booking Summary</h1>
+                        <h1 className='booking-summary'>Cart</h1>
 
                         <table className="booking-table">
                             <thead>
                                 <tr>
                                     <th></th>
                                     <th></th>
-                                    <th >Product</th>
+                                    <th>Product</th>
                                     <th>Price</th>
                                     <th>Package Quantity</th>
                                     <th>Subtotal</th>
@@ -106,9 +116,9 @@ const BookingCard = () => {
                                         <td className='product-data'>
                                             <div><strong>{product?.image_text}</strong></div>
                                             {bookingDetails?.tourDate ? <div><strong>Tour Date:</strong> {bookingDetails?.tourDate || "Not selected"}</div> : null}
-                                            <div>Adults: {booking.adults}</div>
-                                            <div>Children: {booking.children}</div>
-                                            <div>Infants: {booking.infants}</div>
+                                            <div><strong>Adults:</strong> {booking.adults}</div>
+                                            <div><strong>Children:</strong> {booking.children}</div>
+                                            <div><strong>Infants:</strong> {booking.infants}</div>
                                         </td>
                                         <td>AED {adultPrice.toFixed(2)}</td>
                                         <td>
@@ -137,9 +147,9 @@ const BookingCard = () => {
                                     <span>AED {totalAmount.toFixed(2)}</span>
                                 </div>
                             </div>
-                        </div>
+                        </div>  
 
-                        <Button danger onClick={handleCheckout} style={{ marginTop: "20px" }}>Proceed to Payment</Button>
+                        <Button  id='Proceed-to-Payment' onClick={handleCheckout}>Proceed to Payment</Button>
                     </div>
                 </Col>
             </Row>

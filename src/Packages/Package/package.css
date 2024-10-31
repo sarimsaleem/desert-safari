@@ -106,3 +106,38 @@
   color: var(--color);
   margin-right: 8px;
 }
+
+
+/* Center the Book Now button and set it to red */
+.book-now-btn {
+  display: inline-block;
+  margin: 2rem auto;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: var(--color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.booking-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.booking-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.loading-indicator-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Adjust the height to center in the viewport */
+  font-size: 1.5rem;
+  color: #333;
+}

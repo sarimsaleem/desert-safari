@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FaCheck } from "react-icons/fa";
-import "./package.css"
+import { Spin } from 'antd'; // Importing the Ant Design Spin component
+import "./package.css";
 import { fetchProduct } from '../../Utils/function';
 import Booking from '../../Components/Booking/Booking';
+
 const Package = () => {
   const params = useParams();
   const [product, setProduct] = useState({});
+  const [showBooking, setShowBooking] = useState(false);
+  const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
     if (params?.productId) {
@@ -15,15 +19,31 @@ const Package = () => {
   }, [params]);
 
   const loadProduct = (productId) => {
+    setLoading(true); // Start loading
     fetchProduct(productId)
       .then(res => {
         setProduct(res);
       })
       .catch(error => {
-        console.error("Error fetching products: ", error);
+        console.error("Error fetching product: ", error);
         setProduct({});
+      })
+      .finally(() => {
+        setLoading(false); // Stop loading when done
       });
   };
+
+  const handleBookNowClick = () => {
+    setShowBooking(prevShowBooking => !prevShowBooking); // Toggle the booking form
+  };
+
+  if (loading) {
+    return (
+      <div className="loading-indicator-centered">
+        <Spin size="large" /> {/* Ant Design spinner */}
+      </div>
+    ); // Show loading indicator
+  }
 
   return (
     <div className='detail'>
@@ -42,6 +62,7 @@ const Package = () => {
           )}
         </div>
       </div>
+
       <div className="container">
         {product?.special_note && (
           <div className="special-note mb-4">
@@ -75,9 +96,16 @@ const Package = () => {
         ) : (
           <p>No content available.</p>
         )}
+        
+        {/* Centered Book Now button */}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button className="book-now-btn" onClick={handleBookNowClick}>Book Now</button>
+        </div>
       </div>
 
-      <Booking product={product} />
+      <div className={`booking-container ${showBooking ? 'show' : ''}`}>
+        {showBooking && <Booking product={product} />}
+      </div>
     </div>
   );
 }
