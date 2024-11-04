@@ -4,38 +4,42 @@ import { FaPersonWalkingLuggage } from 'react-icons/fa6';
 import { Link, useNavigate } from 'react-router-dom';
 import { db } from "../../Firebase/FirebaseConfig"; // Ensure your Firebase config is imported
 import { collection, query, where, getDocs } from "firebase/firestore";
-import {fetchProducts} from '../../Utils/function';
-import {convertToSlug} from '../../Utils/helper';
+import { fetchProducts } from '../../Utils/function';
+import { convertToSlug } from '../../Utils/helper';
 import { BiCategory } from 'react-icons/bi';
 
 
-const HomeSectionCard = ({data}) => {
+const HomeSectionCard = ({ data }) => {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
   const handleClick = (category, item = {}) => {
-    navigate(`/packages/${convertToSlug(category?.category_name)}/${convertToSlug(item?._id)}`, { state: {
-      category: category,
-        productId: item?._id 
-    } });
+    navigate(`/packages/${convertToSlug(category?.category_name)}/${convertToSlug(item?._id)}`, {
+      state: {
+        category: category,
+        productId: item?._id
+      }
+    });
   };
 
   const viewMore = (obj = {}) => {
-    navigate(`/packages/${obj?._id}`, { state: {
+    navigate(`/packages/${obj?._id}`, {
+      state: {
         category: obj
-    } });
+      }
+    });
   };
 
   useEffect(() => {
-  if(data?._id){
-    // console.log(data?._id)
-    loadProducts(data?._id);
-  }
-    
+    if (data?._id) {
+      // console.log(data?._id)
+      loadProducts(data?._id);
+    }
+
   }, [data]);
 
   const loadProducts = async (categoryId) => {
-    fetchProducts({categoryId})
+    fetchProducts({ categoryId })
       .then(res => {
         // console.log('getCategoire',res)
         setProducts(res)
@@ -49,7 +53,7 @@ const HomeSectionCard = ({data}) => {
   // console.log('data',data)
 
   return products?.length ? (
-    <div className={`activities-parent card-section ${data?.image_url ? 'light' : "dark"}`} style={data?.image_url ? {backgroundImage: `url(${data?.image_url})`} : {}}>
+    <div className={`activities-parent card-section ${data?.image_url ? 'light' : "dark"}`} style={data?.image_url ? { backgroundImage: `url(${data?.image_url})` } : {}}>
       <div className="container">
         {/* <h1 className='act-main-heading'>Dubai Desert Safari – Most Popular Desert Safari Company in Dubai</h1> */}
         <div className='faqs-parent'>
@@ -72,7 +76,7 @@ const HomeSectionCard = ({data}) => {
                     </div>
                     {item?.price ? <h3 className="card-text"><sup className='currency'>AED</sup>{item.price}</h3> : null}
                   </div>
-                   <button className="btn act-btn" onClick={() => handleClick(data, item)} >Book Now</button>
+                  <button className="btn act-btn" onClick={() => handleClick(data, item)} >Book Now</button>
                 </div>
               </div>
             </div>

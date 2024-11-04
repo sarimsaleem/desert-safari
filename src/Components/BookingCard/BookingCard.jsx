@@ -11,9 +11,6 @@ const BookingCard = () => {
     const [form] = Form.useForm();
     const navigate = useNavigate();
 
-    // const onFinish = (values) => {
-    //     console.log('Form Values:', values);
-    // };
 
     const location = useLocation();
     const product = location.state?.product;

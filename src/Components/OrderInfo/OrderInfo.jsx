@@ -1,9 +1,10 @@
 import React from 'react';
 import './orderinfo.css';
 import { Row, Col, Container, Button } from 'react-bootstrap';
-import { Form, Input, Typography, message } from 'antd';
+import { Form, Input, Typography, message, Radio } from 'antd';
 import { useLocation } from 'react-router-dom';
-import { addOrder } from '../../Utils/OrderFunction'; 
+import { addOrder } from '../../Utils/OrderFunction';
+import emailjs from 'emailjs-com';
 
 const OrderInfo = () => {
     const { Title, Paragraph } = Typography;
@@ -14,20 +15,55 @@ const OrderInfo = () => {
     const onFinish = async (orderInfo) => {
         const combinedDetails = {
             ...orderDetails,
-            orderInfo
+            orderInfo,
+            status: orderDetails?.status || 'Pending', 
+            date: orderDetails?.bookings[0]?.date || 'Not selected',
+            adults: orderDetails?.bookings[0]?.adults || 0,
+            children: orderDetails?.bookings[0]?.children || 0,
+            infants: orderDetails?.bookings[0]?.infants || 0,
+            subtotalAmount: orderDetails?.subtotalAmount || '0.00',
+            totalAmount: orderDetails?.totalAmount || '0.00',
+            createdAt: orderDetails?.createdAt || new Date().toISOString(),
         };
-    
-        const customOrderId = orderDetails.orderId; 
-    
+        
+        const customOrderId = combinedDetails.orderId;
+
         try {
             const docId = await addOrder(combinedDetails, customOrderId);
             message.success('Order details saved successfully!');
-            form.resetFields(); 
+            form.resetFields();
+
+            // Send email notification
+            emailjs.send(
+                'service_wazal4q',
+                'template_1ctyl1n',
+                {
+                    to_name: orderInfo.fullName,
+                    to_email: orderInfo.email,
+                    orderId: customOrderId,
+                    status: combinedDetails.status,
+                    date: combinedDetails.date,
+                    adults: combinedDetails.adults,
+                    children: combinedDetails.children,
+                    infants: combinedDetails.infants,
+                    subtotalAmount: combinedDetails.subtotalAmount,
+                    totalAmount: combinedDetails.totalAmount,
+                    createdAt: combinedDetails.createdAt,
+                    paymentMethod: orderInfo.paymentMethod,
+                },
+                'XwTfcKiagzY0CXetf'
+            ).then((response) => {
+                message.success('Email sent to customer!');
+            }).catch((error) => {
+                message.error('Failed to send email.');
+                console.error('Email error:', error);
+            });
+
         } catch (error) {
             message.error('Failed to save order details.');
+            console.error('Order saving error:', error);
         }
     };
-    
 
     return (
         <Container>
@@ -42,6 +78,7 @@ const OrderInfo = () => {
                             onFinish={onFinish}
                             autoComplete="off"
                         >
+
                             <Row gutter={16}>
                                 <Col span={12}>
                                     <Typography className="typo-billing">Nationality</Typography>
@@ -82,9 +119,7 @@ const OrderInfo = () => {
                                     <Typography className="typo-billing">Room No.(Optional)</Typography>
                                     <Form.Item
                                         name="roomNo"
-                                        rules={[
-                                            { pattern: /^[0-9]+$/, message: 'Room number should be a valid number' },
-                                        ]}
+                                        rules={[{ pattern: /^[0-9]+$/, message: 'Room number should be a valid number' }]}
                                     >
                                         <Input placeholder="Enter room number" />
                                     </Form.Item>
@@ -129,21 +164,38 @@ const OrderInfo = () => {
                                         <Input.TextArea rows={4} placeholder="Add any additional information here" />
                                     </Form.Item>
                                 </Col>
+                            </Row> 
+
+                            {/* Payment Method Section */}
+                            <Row gutter={16}>
+                                <Col span={24}>
+                                    <Typography className="typo-billing">Payment Method</Typography>
+                                    <Form.Item
+                                        name="paymentMethod"
+                                        rules={[{ required: true, message: 'Please select a payment method' }]}
+                                    >
+                                        <Radio.Group>
+                                            <Radio value="pay-At-Driver" style={{ color: "var(--text-color)" }}>Pay at the Driver</Radio>
+                                            <Radio value="pay-By-Card" style={{ color: "var(--text-color)" }}>Pay by Card</Radio> 
+                                        </Radio.Group>
+                                    </Form.Item>
+                                </Col>
                             </Row>
 
                             <Row>
                                 <Col span={24}>
                                     <Form.Item>
-                                        <Button typz="submit" className='checkout-btn'>Submit</Button>
+                                        <Button type="submit" className='checkout-btn'>Submit</Button>
                                     </Form.Item>
                                 </Col>
                             </Row>
+
                         </Form>
                     </div>
                 </Col>
             </Row>
         </Container>
-    ); 
+    );
 }
 
 export default OrderInfo;

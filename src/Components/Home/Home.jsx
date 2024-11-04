@@ -4,25 +4,26 @@ import Expandable from '../Accordion/Accordion';
 import Cart from "../Cart/Cart"
 import HomeSectionCard from '../HomeSectionCard/HomeSectionCard';
 import { fetchCategories } from '../../Utils/function';
-const Home = () => {
 
-  const [categoires, setCategoires] = useState([]);
-  // console.log('categoires', categoires)
+
+const Home = () => {
+  const [categoires, setCategories] = useState([]);
+
   useEffect(() => {
-    getCategoire();
+    getCategories();
   }, []);
 
-  const getCategoire = () => {
-    fetchCategories()
-      .then(res => {
-        // console.log('getCategoire', res)
-        setCategoires(res)
-      })
-      .catch(error => {
-        console.error("Error fetching products: ", error);
-        setCategoires([])
-      })
+  const getCategories = async () => {
+    try {
+      const res = await fetchCategories();
+      const filteredCategories = res.filter(category => category.show_on_homepage === true);
+      setCategories(filteredCategories);
+    } catch (error) {
+      console.error("Error fetching categories: ", error);
+      setCategories([]); 
+    }
   };
+
 
   return (
     <>

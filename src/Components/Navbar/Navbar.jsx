@@ -22,6 +22,8 @@ const Header = () => {
                         <div className='nav-link-parent'>
                             <Nav.Link className="nav-links" ><Link className='link' to="/about">About Us</Link></Nav.Link>
                         </div>
+
+
                         <div className='nav-link-parent'>
                             <NavDropdown className="nav-links" title="Desert Safari Dubai" id="basic-nav-dropdown">
                                 <div className="dropDawn-cont1">
@@ -48,6 +50,7 @@ const Header = () => {
                             </NavDropdown>
                         </div>
 
+
                         <div className='nav-link-parent'>
                             <NavDropdown className="nav-links" title="All Packages" id="basic-nav-dropdown">
                                 <div className="dropDawn-cont">
@@ -70,6 +73,7 @@ const Header = () => {
                                 </div>
                             </NavDropdown>
                         </div>
+
                         <div className='nav-link-parent'>
                             <Nav.Link className="nav-links"><Link className='link' to="/contact">Contact</Link></Nav.Link>
                         </div>

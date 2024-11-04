@@ -35,17 +35,6 @@ export const fetchProduct = async (id) => {
 
   return product?.length ? product[0] : null;
 
-  // try {
-  //   let customQuery = query(collection(db, 'products'), where("id", "==", id));
-  //   const data = await getDocs(customQuery);
-  //   console.log('data',data)
-  //   const product = data.docs.map((doc) => ({ ...doc.data(), _id: doc.id }));
-  //   console.log('product',product,id)
-  //   return product?.length ? product[0] : null; 
-  // } catch (error) {
-  //   console.error('Error fetching products:', error);
-  //   return [];
-  // }
 };
 
 export const fetchCategories = async () => {

@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "antd": "^5.21.0",
+    "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
+    "emailjs": "^4.0.3",
+    "emailjs-com": "^3.2.0",
     "firebase": "^10.14.0",
     "formik": "^2.4.6",
     "icons": "^1.0.0",
