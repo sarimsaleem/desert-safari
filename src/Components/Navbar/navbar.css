@@ -61,7 +61,7 @@
 
 .dropDawn-cont {
     padding: 0px 20px;
-    width: 320px;
+    width: 400px;
 }
 
 .dropDawn-cont1 {
@@ -70,8 +70,8 @@
 }
 
 .drop-items {
-    padding: 10px 15px;
-    font-size: 16px;
+    padding: 10px 0px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--text-color);
 }

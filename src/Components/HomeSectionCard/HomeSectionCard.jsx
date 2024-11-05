@@ -83,7 +83,7 @@ const HomeSectionCard = ({ data }) => {
           ))}
         </div>
         <div className="view-more">
-          <button onClick={() => viewMore(data)}><Link className="viewmore2">View More</Link></button>
+          <button onClick={() => viewMore(data)}>View More</button>
         </div>
       </div>
     </div>

@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import "./packages.css";
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import header from "../assets/header.jpg";
 import { fetchProducts, fetchCategory } from '../Utils/function';
 import { convertToSlug } from '../Utils/helper';
-import { Spin } from 'antd'; // Import the Spin component
+import { Spin } from 'antd';
 
 const Packages = (props) => {
   const navigate = useNavigate();
   const params = useParams();
+  const { state } = useLocation()
 
   const [category, setCategory] = useState(null);
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (params?.categoryId) {
-      loadCategory(params.categoryId);
-      loadProducts(params.categoryId);
+    let categoryId = state?.category?._id||params?.categoryId;
+    if (categoryId) {
+      loadCategory(categoryId);
+      loadProducts(categoryId);
     }
-  }, [params?.categoryId]);
+  }, [params?.categoryId, state?.category]);
 
   const loadCategory = async (id) => {
     setLoading(true);
@@ -33,7 +35,7 @@ const Packages = (props) => {
         console.error("Error fetching category: ", error);
       })
       .finally(() => {
-        setLoading(false); 
+        setLoading(false);
       });
   };
 
@@ -49,16 +51,16 @@ const Packages = (props) => {
         setProducts([]);
       })
       .finally(() => {
-        setLoading(false); 
+        setLoading(false);
       });
   };
 
   const handleClick = (categoryData, packageData = {}) => {
-    navigate(`/packages/${convertToSlug(categoryData?._id)}/${convertToSlug(packageData?._id)}`, { 
+    navigate(`/packages/${convertToSlug(categoryData?._id)}/${convertToSlug(packageData?._id)}`, {
       state: {
         category: categoryData,
         productId: packageData?._id
-      } 
+      }
     });
   };
 
