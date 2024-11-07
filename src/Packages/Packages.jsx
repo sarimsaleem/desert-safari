@@ -16,7 +16,7 @@ const Packages = (props) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    let categoryId = state?.category?._id||params?.categoryId;
+    let categoryId = state?.category?._id || params?.categoryId;
     if (categoryId) {
       loadCategory(categoryId);
       loadProducts(categoryId);
@@ -74,34 +74,36 @@ const Packages = (props) => {
       </div>
 
       <div className='container'>
-        {loading ? (
-          <div className="loading-indicator-centered">
-            <Spin size="large" />
-          </div>
-        ) : (
-          <div className="row">
-            {products.map((item, index) => (
-              <div key={index} className="col-md-4 mb-4">
-                <div className="card h-100 act-card">
-                  <div className="image-container">
-                    {item?.image_url && <img src={item.image_url} className="card-img-top" alt={item.event_name} />}
-                    {item?.image_text && <h6 className="image-text">{item.image_text}</h6>}
-                  </div>
-                  <div className="card-body">
-                    <div className='card-sub-body'>
-                      <div className="title-container">
-                        {item?.event_name && <h3 className="card-title">{item.event_name} &nbsp;</h3>}
-                        {item?.most_popular && <span className='most-popular'>Most Popular </span>}
-                      </div>
-                      {item?.price && <h3 className="card-text"><sup className='currency'>AED</sup>{item.price}</h3>}
+        <div className="packages-parent">
+          {loading ? (
+            <div className="loading-indicator-centered">
+              <Spin size="large" />
+            </div>
+          ) : (
+            <div className="row">
+              {products.map((item, index) => (
+                <div key={index} className="col-md-4 mb-4">
+                  <div className="card h-100 act-card">
+                    <div className="image-container">
+                      {item?.image_url && <img src={item.image_url} className="card-img-top" alt={item.event_name} />}
+                      {item?.image_text && <h6 className="image-text">{item.image_text}</h6>}
                     </div>
-                    <button className="btn act-btn" onClick={() => handleClick(category, item)} >Book Now</button>
+                    <div className="card-body">
+                      <div className='card-sub-body'>
+                        <div className="title-container">
+                          {item?.event_name && <h3 className="card-title">{item.event_name} &nbsp;</h3>}
+                          {item?.most_popular && <span className='most-popular'>Most Popular </span>}
+                        </div>
+                        {item?.price && <h3 className="card-text"><sup className='currency'>AED</sup>{item.price}</h3>}
+                      </div>
+                      <button className="btn act-btn" onClick={() => handleClick(category, item)} >Book Now</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

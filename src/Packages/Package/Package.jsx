@@ -34,15 +34,15 @@ const Package = () => {
   };
 
   const handleBookNowClick = () => {
-    setShowBooking(prevShowBooking => !prevShowBooking); // Toggle the booking form
+    setShowBooking(prevShowBooking => !prevShowBooking);
   };
 
   if (loading) {
     return (
       <div className="loading-indicator-centered">
-        <Spin size="large" /> {/* Ant Design spinner */}
+        <Spin size="large" />
       </div>
-    ); // Show loading indicator
+    );
   }
 
   return (
@@ -64,43 +64,66 @@ const Package = () => {
       </div>
 
       <div className="container">
-        {product?.special_note && (
-          <div className="special-note mb-4">
-            <p className='special-note-text'>
-              <span className='special-note-span'>Special Note:</span> {product.special_note}
-            </p>
-          </div>
-        )}
-        {product?.description && <div className="description">{product.description}</div>}
-
-        {Array.isArray(product?.content) && product.content.length > 0 ? (
-          product.content.map((obj, index) => (
-            <div key={index}>
-              <h2 className='detail-head'>{obj?.title}</h2>
-              <div className="row">
-                {Array.isArray(obj.data) && obj.data.map((chilObj, childIndex) => (
-                  <div key={childIndex} className="col-6">
-                    <li className="detail-li d-flex align-items-center">
-                      {!obj?.hideItemIcon && <FaCheck className='checkIcon' />}
-                      <div>
-                        <p style={{ margin: 0 }}>{chilObj.item} {chilObj.itemDescription && <span>: {chilObj.itemDescription}</span>}</p>
-                        {chilObj.description && <p style={{ margin: 0 }}>{chilObj.description}</p>}
-                        {obj?.book && <div className="detail-btn"><button>{obj.book}</button></div>}
-                      </div>
-                    </li>
-                  </div>
-                ))}
-              </div>
+        <div className="package-parent">
+          {product?.special_note && (
+            <div className="special-note mb-4">
+              <p className="special-note-text">
+                <span className="special-note-span">Special Note:</span> {product.special_note}
+              </p>
             </div>
-          ))
-        ) : (
-          <p>No content available.</p>
-        )}
-        
-        {/* Centered Book Now button */}
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <button className="book-now-btn" onClick={handleBookNowClick}>Book Now</button>
+          )}
+          {product?.description && <div className="description">{product.description}</div>}
+
+          {Array.isArray(product?.content) && product.content.length > 0 ? (
+            product.content.map((obj, index) => (
+              <div key={index}>
+                <h2 className="detail-head">{obj?.title}</h2>
+                <div className="row">
+                  {Array.isArray(obj.data) && obj.data.map((chilObj, childIndex) => (
+                    <React.Fragment key={childIndex}>
+                      {/* Check for item and itemDescription */}
+                      <div className="col-6">
+                        <li className="detail-li d-flex align-items-center">
+                          {!obj?.hideItemIcon && <FaCheck className="checkIcon" />}
+                          <div>
+                            <p style={{ margin: 0 }}>
+                              {chilObj.item} {chilObj.itemDescription && <span>: {chilObj.itemDescription}</span>}
+                            </p>
+                          </div>
+                        </li>
+                      </div>
+                      {/* Display description in a full-width column if it exists */}
+
+                    </React.Fragment>
+                  ))}
+                  {obj.description && (
+                    <div className="col-12">
+                      {obj.description.split(/\r?\n/).map((line, index) => (
+                        <p key={index} className="description" style={{ margin: 0 }}>
+                          {line}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+
+                </div>
+
+                {obj?.book && (
+                  <div className="detail-btn">
+                    <button>{obj.book}</button>
+                  </div>
+                )}
+              </div>
+            ))
+          ) : (
+            <p>No content available.</p>
+          )}
         </div>
+      </div>
+
+      {/* Centered Book Now button */}
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <button className="book-now-btn" onClick={handleBookNowClick}>Book Now</button>
       </div>
 
       <div className={`booking-container ${showBooking ? 'show' : ''}`}>
