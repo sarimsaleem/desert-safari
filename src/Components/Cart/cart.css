@@ -39,28 +39,28 @@ body {
 }
 
 .main-title {
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
   font-weight: bold;
   margin-bottom: 30px;
 }
 
 .sub-title {
-  font-size: 36px;
+  font-size: 27px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .section-title {
-  font-size: 30px;
+  font-size: 22px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
   
 .paragraph {
-  line-height: 1.7;
-  margin-bottom: 18px;
-  font-size: 16px;
+  line-height: 1.5  ;
+  margin-bottom: 15px;
+  font-size: 14px;
 }
 
 .cart-btn {

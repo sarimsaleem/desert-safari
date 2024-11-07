@@ -1,4 +1,4 @@
-import { collection, getDocs, where, query } from 'firebase/firestore';
+import { collection, getDocs, where, query, getDoc } from 'firebase/firestore';
 import { db } from '../Firebase/FirebaseConfig';
 
 const productCollectionRef = collection(db, 'products');
@@ -31,7 +31,8 @@ export const fetchProduct = async (id) => {
     _id: doc.id
   }));
 
-  console.log(product, id)
+
+  console.log('fetchProduct', product, id)
 
   return product?.length ? product[0] : null;
 

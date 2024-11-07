@@ -1,61 +1,67 @@
 import React from 'react';
-import { FaChevronRight } from 'react-icons/fa'; // Import an icon from react-icons
+import { FaChevronRight } from 'react-icons/fa';
+import { Row, Col, Typography, Space } from 'antd';
 import "./subfooter.css";
-import "../colors/Colors.css"
+import "../colors/Colors.css";
+
+const { Title, Link } = Typography;
+
 const SubFooter = () => {
   return (
-    <div className="grid-container">
-      <div className="grid-item">
-        <h3>UAE Activities</h3>
-        <ul>
-          <li><FaChevronRight /><a href="#"> Desert Safari Dubai Packages</a></li>
-          <li><FaChevronRight /><a href="#"> Sightseeing Tours</a></li>
-          <li><FaChevronRight /><a href="#"> Cruise Dinner</a></li>
-          <li><FaChevronRight /><a href="#"> Combo Tours</a></li>
-        </ul>
-      </div>
+    <div className="subfooter-container">
+      <Row gutter={[16, 16]} justify="center">
+        <Col xs={24} sm={12} md={6} lg={6} xl={6} >
+          <Title level={3} style={{color: "var(--color)"}}>UAE Activities</Title>
+          <Space direction="vertical">
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Desert Safari Dubai Packages</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Sightseeing Tours</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Cruise Dinner</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Combo Tours</Link>
+          </Space>
+        </Col>
 
-      <div className="grid-item">
-        <h3>Top Selling Tours</h3>
-        <ul>
-          <li><FaChevronRight /><a href="#"> Desert Safari by Bus Most Popular</a></li>
-          <li><FaChevronRight /><a href="#"> Evening Desert Safari Most Popular</a></li>
-          <li><FaChevronRight /><a href="#"> Red Dune Bashing Desert Safari</a></li>
-          <li><FaChevronRight /><a href="#"> Desert Safari (Gold) Most Popular</a></li>
-          <li><FaChevronRight /><a href="#"> Silver Desert Safari in Dubai</a></li>
-          <li><FaChevronRight /><a href="#"> Camel Ride Dubai</a></li>
-          <li><FaChevronRight /><a href="#"> Desert Safari with Quad Bike</a></li>
-          <li><FaChevronRight /><a href="#"> Morning Desert Safari Most Popular</a></li>
-          <li><FaChevronRight /><a href="#"> Hummer Desert Safari</a></li>
-        </ul>
-      </div>
+        <Col xs={24} sm={12} md={6} lg={6} xl={6}>
+          <Title level={3} style={{color: "var(--color)"}}>Top Selling Tours</Title>
+          <Space direction="vertical">
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Desert Safari by Bus Most Popular</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Evening Desert Safari Most Popular</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Red Dune Bashing Desert Safari</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Desert Safari (Gold) Most Popular</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Silver Desert Safari in Dubai</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Camel Ride Dubai</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Desert Safari with Quad Bike</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Morning Desert Safari Most Popular</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Hummer Desert Safari</Link>
+          </Space>
+        </Col>
 
-      <div className="grid-item">
-        <h3>Top Selling Tours</h3>
-        <ul>
-          <li><FaChevronRight /><a href="#"> Dubai City Tour Most Popular</a></li>
-          <li><FaChevronRight /><a href="#"> Abu Dhabi City Tour Most Popular</a></li>
-          <li><FaChevronRight /><a href="#"> Hatta Mountain Safari</a></li>
-          <li><FaChevronRight /><a href="#"> Fujairah City Tour</a></li>
-          <li><FaChevronRight /><a href="#"> Al Ain City Tour</a></li>
-          <li><FaChevronRight /><a href="#"> Oman Musandam Tour</a></li>
-          <li><FaChevronRight /><a href="#"> Marina Cruise Dinner Most Popular</a></li>
-          <li><FaChevronRight /><a href="#"> Dhow Cruise Dinner Most Popular</a></li>
-        </ul>
-      </div>
+        <Col xs={24} sm={12} md={6} lg={6} xl={6}>
+          <Title level={3} style={{color: "var(--color)"}}>Top Selling Tours</Title>
+          <Space direction="vertical">
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Dubai City Tour Most Popular</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Abu Dhabi City Tour Most Popular</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Hatta Mountain Safari</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Fujairah City Tour</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Al Ain City Tour</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Oman Musandam Tour</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Marina Cruise Dinner Most Popular</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Dhow Cruise Dinner Most Popular</Link>
+          </Space>
+        </Col>
 
-      <div className="grid-item">
-        <h3>Top Selling Tours</h3>
-        <ul>
-          <li><FaChevronRight /><a href="#"> Abu Dhabi And Ferrari World</a></li>
-          <li><FaChevronRight /><a href="#"> Dubai City Tour + Desert Safari</a></li>
-          <li><FaChevronRight /><a href="#"> Dubai City Tour + Dhow Cruise Dinner</a></li>
-          <li><FaChevronRight /><a href="#"> Dubai City Tour + Marina Cruise Dinner</a></li>
-          <li><FaChevronRight /><a href="#"> Abu Dhabi + Marina Cruise Dinner</a></li>
-          <li><FaChevronRight /><a href="#"> Abu Dhabi + Dhow Cruise Dinner</a></li>
-          <li><FaChevronRight /><a href="#"> Dubai City Tour + Desert Safari + Dhow Cruise Dinner + Abu Dhabi City Tour</a></li>
-        </ul>
-      </div>
+        <Col xs={24} sm={12} md={6} lg={6} xl={6}>
+          <Title level={3} style={{color: "var(--color)"}}  >Top Selling Tours</Title>
+          <Space direction="vertical">
+            <Link style={{color: "var(--text-color)"}} className='aasas' href="#"><FaChevronRight /> Abu Dhabi And Ferrari World</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Dubai City Tour + Desert Safari</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Dubai City Tour + Dhow Cruise Dinner</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Dubai City Tour + Marina Cruise Dinner</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Abu Dhabi + Marina Cruise Dinner</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Abu Dhabi + Dhow Cruise Dinner</Link>
+            <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Dubai City Tour + Desert Safari + Dhow Cruise Dinner + Abu Dhabi City Tour</Link>
+          </Space>
+        </Col>
+      </Row>
     </div>
   );
 };
