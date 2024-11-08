@@ -38,6 +38,7 @@
     font-size: 16px;
     color: var(--text-color);
     font-weight: 600;
+    margin: 0px;
 }
 
 #basic-nav-dropdown:hover {

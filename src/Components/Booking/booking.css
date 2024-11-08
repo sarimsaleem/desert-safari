@@ -1,121 +1,91 @@
 .form {
-    background: var(--color);
-    padding: 40px 40px;
-    margin-top: 50px;
-  }
-  
-  .column-child {
-    padding: 13px 0;
-    border: 1px solid #ccc;
-    width: 33.4%;
-  }
-  
-  .column-child h4 {
-    color: white;
-    text-align: center;
-    margin: 0;
-    font-size: 17px;
-    font-weight: 600;
-  }
-  
-  .column-child2 {
-    padding: 13px 0;
-    border: 1px solid #ccc;
-    text-align: center;
-    width: 33.4%;
-  }
-  
-  .column-child2 h4 {
-    color: white;
-    margin: 0;
-    font-size: 17px;
-  }
-  
-  .subParent1 {
-    display: flex;
-    background: #3c3c3c;
-  }
-  .subParent2{
-    display: flex;
-  }
-  
-  .detail-BookNow{
-    color: white;
-    font-size: 25px;
-    font-weight: 600;
-    margin-bottom: 30px;
-  }
-  
-  .subParent3{
-    margin: 30px 0;
-  }
-  
-  .subParent3-label{
-    color: white;
-    margin-bottom: 10px;
-    font-weight: 600;
-    font-size: 16px;
-  }
-  .input-btn button {
-    border: none;
-    width: 28px;
-    height: 23px;
-    border-radius: 30px;
-    margin: 0px 3px 0 3px;
-    background: white;
-    color: var(--color);
+  background: var(--color);
+  padding: 40px;
+  margin-top: 50px;
 }
-  
-  .input-btn input{
-    border: none;
-    outline: none;
-    height: 40px;
-  }
-  .input-btn{
-    display: flex;
-    align-items: center;
+
+.column-child,
+.column-child2 {
+  padding: 13px 15px;
+  border: 1px solid #ccc;
+  text-align: center;
+  margin-bottom: 16px;
+
 }
-  .date{
-    width: 100%;
-    height: 100%;
-  }
-  
-  .subParent4{
-    width: 25%;
-  }
-  
-  .subParent4 h4{
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 15px;
-  }
-  .subParent4-main-heading{
-    display: flex;
-    justify-content: space-between;
-  }
-  .subParent4-main-heading h5{
-    color: white;
-    font-size: 16px;
-    font-weight: 700;
-  }
+
+.column-child{
+  background: var(--category-color);
+}
+
+.column-child h4,
+.column-child2 h4 {
+  color: white;
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.detail-BookNow {
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.subParent-label {
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.input-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-btn button {
+  border: none;
+  width: 28px;
+  height: 23px;
+  border-radius: 30px;
+  background: white;
+  color: var(--color);
+}
+
+.date {
+  width: 100%;
+  height: 100%;
+}
+
+.summary-heading {
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 30px 0 10px;
+}
+
 .booknow-booking {
-    border: none;
-    background: #3c3c3c;
-    color: white;
-    padding: 7px 20px;
-    border-radius: 30px;
+  border: none;
+  background: #3c3c3c;
+  color: white;
+  padding: 7px 20px;
+  border-radius: 30px;
 }
 
 .book-parent {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
-.error-message {
-  color: red;
-  font-size: 14px;
-  margin-top: 10px;
-  text-align: center;
+.summary-headings h5{
+  color: white;
 }
 
 
+@media screen and (max-width: 1000px) {
+  .summary-headings h5 {
+    font-size: 19px;
+  }
+}

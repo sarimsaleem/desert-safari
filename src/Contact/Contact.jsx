@@ -46,8 +46,8 @@ const Contact = () => {
                     >
                         {({ errors, touched }) => (
                             <Form>
-                                <Row className="mb-3">
-                                    <Col>
+                                <Row>
+                                    <Col className="mb-3">
                                         <Typography className='label-contact' htmlFor="name">Name:</Typography>
                                         <Field name="name">
                                             {({ field }) => (
@@ -56,7 +56,7 @@ const Contact = () => {
                                         </Field>
                                         <ErrorMessage name="name" component="div" style={{ color: 'red', marginTop: '10px' }} />
                                     </Col>
-                                    <Col>
+                                    <Col className="mb-3">
                                         <Typography className='label-contact' htmlFor="email">Email:</Typography>
                                         <Field name="email">
                                             {({ field }) => (
@@ -67,8 +67,8 @@ const Contact = () => {
                                     </Col>
                                 </Row>
 
-                                <Row className="mb-3">
-                                    <Col>
+                                <Row>
+                                    <Col className="mb-3">
                                         <Typography className='label-contact' htmlFor="number">Number:</Typography>
                                         <Field name="number">
                                             {({ field }) => (
@@ -77,7 +77,7 @@ const Contact = () => {
                                         </Field>
                                         <ErrorMessage name="number" component="div" style={{ color: 'red', marginTop: '10px' }} />
                                     </Col>
-                                    <Col>
+                                    <Col className="mb-3">
                                         <Typography className='label-contact' htmlFor="subject">Subject:</Typography>
                                         <Field name="subject">
                                             {({ field }) => (
@@ -88,8 +88,8 @@ const Contact = () => {
                                     </Col>
                                 </Row>
 
-                                <Row className="mb-3">
-                                    <Col>
+                                <Row>
+                                    <Col className="mb-3">
                                         <Typography className='label-contact' htmlFor="message">Message:</Typography>
                                         <Field name="message">
                                             {({ field }) => (

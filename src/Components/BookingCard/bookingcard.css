@@ -1,3 +1,4 @@
+/* General Styles */
 .booking-card-wrapper {
   padding-block: 50px;
 }
@@ -7,12 +8,11 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
   background-color: #fdfdfd;
 }
 
 .booking-summary {
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--category-color);
 }
@@ -21,6 +21,7 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  overflow-x: auto;
 }
 
 .booking-table th,
@@ -28,10 +29,7 @@
   padding: 10px;
   border: 1px solid #ddd;
   font-size: 14px;
-}
-
-.booking-table td {
-  color: var(--text-color);
+  text-align: left;
 }
 
 .booking-table th {
@@ -40,12 +38,11 @@
 }
 
 .product-image {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
   border-radius: 5px;
 }
-
 
 .quantity-control {
   display: flex;
@@ -70,54 +67,135 @@
   font-size: 16px;
 }
 
+.total-summary {
+  margin-top: 20px;
+  padding: 20px;
+  max-width: 270px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.total-summary h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.total-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.total-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.total-item span:last-child {
+  color: #e53935;
+  font-weight: bold;
+}
+
+#Proceed-to-Payment {
+  padding: 17px 30px 19px;
+  font-size: 16px;
+  color: white;
+  background-color: var(--color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+.product-data {
+  gap: 10px; 
+}
+
+@media (max-width: 768px) {
+  .product-data {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .booking-card-wrapper {
+    padding: 20px;
+  }
+
+  .booking-summary {
+    font-size: 1.5rem;
+  }
 
   .total-summary {
-    margin-top: 20px;
-    padding: 20px;
-    max-width: 270px;
-    border-radius: 8px;
+    max-width: 100%;
+    margin: 0 auto;
   }
 
-  .total-summary h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
+  .quantity-control input {
+    width: 40px;
+    font-size: 14px;
   }
 
-  .total-details {
-    display: flex;
-    flex-direction: column;
-    /* gap: 10px; */
+  .product-image {
+    width: 60px;
+    height: 60px;
   }
 
-  .total-item {
+  .booking-table th,
+  .booking-table td {
+    font-size: 12px;
+  }
+
+  #Proceed-to-Payment {
+    width: 100%;
+  }
+}
+
+@media (max-width: 780px) {
+  .booking-summary {
+    font-size: 1.2rem;
+  }
+
+  .booking-table,
+  .booking-table tbody,
+  .booking-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .booking-table th {
+    display: none;
+  }
+
+  .booking-table td {
     display: flex;
     justify-content: space-between;
-    font-size: 1.1rem;
-    color: #444;
-  }
-
-  .total-item strong {
-    font-weight: 600;
-  }
-
-  .total-item span:last-child {
-    color: #e53935;
-    font-weight: bold;
-  }
-  .product-data{
-    text-align: start;
-  }
-
-  #Proceed-to-Payment{
-    padding: 17px 30px 19px;
-    font-size: 16px;
-    color: white;
-    background-color: var(--color);
+    padding: 8px;
+    font-size: 10px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
+    border-bottom: 1px solid #ddd;
   }
+
+  .booking-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex-basis: 50%;
+  }
+
+  .product-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .quantity-control button,
+  .quantity-control input {
+    width: 25px;
+    height: 25px;
+  }
+}

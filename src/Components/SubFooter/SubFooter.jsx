@@ -10,7 +10,7 @@ const SubFooter = () => {
   return (
     <div className="subfooter-container">
       <Row gutter={[16, 16]} justify="center">
-        <Col xs={24} sm={12} md={6} lg={6} xl={6} >
+        <Col xs={24} sm={12} md={12} lg={6} xl={6} >
           <Title level={3} style={{color: "var(--color)"}}>UAE Activities</Title>
           <Space direction="vertical">
             <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Desert Safari Dubai Packages</Link>
@@ -20,7 +20,7 @@ const SubFooter = () => {
           </Space>
         </Col>
 
-        <Col xs={24} sm={12} md={6} lg={6} xl={6}>
+        <Col xs={24} sm={12} md={12} lg={6} xl={6}>
           <Title level={3} style={{color: "var(--color)"}}>Top Selling Tours</Title>
           <Space direction="vertical">
             <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Desert Safari by Bus Most Popular</Link>
@@ -35,7 +35,7 @@ const SubFooter = () => {
           </Space>
         </Col>
 
-        <Col xs={24} sm={12} md={6} lg={6} xl={6}>
+        <Col xs={24} sm={12} md={12} lg={6} xl={6}>
           <Title level={3} style={{color: "var(--color)"}}>Top Selling Tours</Title>
           <Space direction="vertical">
             <Link style={{color: "var(--text-color)"}} href="#"><FaChevronRight /> Dubai City Tour Most Popular</Link>
@@ -49,7 +49,7 @@ const SubFooter = () => {
           </Space>
         </Col>
 
-        <Col xs={24} sm={12} md={6} lg={6} xl={6}>
+        <Col xs={24} sm={12} md={12} lg={6} xl={6}>
           <Title level={3} style={{color: "var(--color)"}}  >Top Selling Tours</Title>
           <Space direction="vertical">
             <Link style={{color: "var(--text-color)"}} className='aasas' href="#"><FaChevronRight /> Abu Dhabi And Ferrari World</Link>

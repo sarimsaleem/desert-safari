@@ -106,3 +106,15 @@
     color: white;
 }
 
+@media (max-width: 780px) {
+    .contact-para {
+        line-height: 18px;
+        font-weight: 400;
+        font-size: 13px;
+    }
+
+    .contact-subHead {
+        font-size: 26px;
+
+    }
+}

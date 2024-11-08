@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import "./homeSectionCard.css";
 import { FaPersonWalkingLuggage } from 'react-icons/fa6';
@@ -84,4 +85,3 @@ const HomeSectionCard = ({ data, isFirstCategory }) => {
 };
 
 export default HomeSectionCard;
-
