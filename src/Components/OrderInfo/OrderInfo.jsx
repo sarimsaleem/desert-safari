@@ -159,7 +159,6 @@ const OrderInfo = () => {
                                     <Typography className="typo-billing">Additional Information</Typography>
                                     <Form.Item
                                         name="additionalInfo"
-                                        rules={[{ max: 300, message: 'Additional information should be a maximum of 300 characters' }]}
                                     >
                                         <Input.TextArea rows={4} placeholder="Add any additional information here" />
                                     </Form.Item>
@@ -176,7 +175,7 @@ const OrderInfo = () => {
                                     >
                                         <Radio.Group>
                                             <Radio value="pay-At-Driver" style={{ color: "var(--text-color)" }}>Pay at the Driver</Radio>
-                                            <Radio value="pay-By-Card" style={{ color: "var(--text-color)" }}>Pay by Card</Radio> 
+                                            {/* <Radio value="pay-By-Card" style={{ color: "var(--text-color)" }}>Pay by Card</Radio>  */}
                                         </Radio.Group>
                                     </Form.Item>
                                 </Col>
