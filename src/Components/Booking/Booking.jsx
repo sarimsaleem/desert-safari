@@ -26,7 +26,7 @@ const Booking = ({ product }) => {
       return;
     }
 
-    navigate("/card", {
+    navigate("/cart", {
       state: {
         product,
         bookingDetails: { tourDate, adults, children, infants, total }
@@ -91,6 +91,7 @@ const Booking = ({ product }) => {
           setTourDate(e.target.value);
           setError('');
         }}
+        style={{ outline: 'none', boxShadow: 'none' }} 
         min={today}
       />
     </div>

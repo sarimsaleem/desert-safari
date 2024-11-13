@@ -11,6 +11,7 @@ const HomeSectionCard = ({ data, isFirstCategory }) => {
   const [products, setProducts] = useState([]);
 
   const handleClick = (category, item = {}) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     navigate(`/packages/${convertToSlug(category?.category_name)}/${convertToSlug(item?._id)}`, {
       state: {
         category: category,

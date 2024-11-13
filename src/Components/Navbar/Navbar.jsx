@@ -15,7 +15,6 @@ import { fetchProduct, fetchProducts } from '../../Utils/function';
 
 const Header = () => {
     const navigate = useNavigate();
-    // const [loading, setLoading] = useState(true);
     const [categories, setCategories] = useState([]);
     const [menuCategory, setMenuCategory] = useState(null);
     const [menuCategoryPackages, setMenuCategoryPackages] = useState([]);
@@ -73,7 +72,7 @@ const Header = () => {
     };
 
     return (
-        <Navbar expand="lg" className="bg-body-tertiary header">
+        <Navbar expand="md" className="bg-body-tertiary header">
             <Container>
                 <Navbar.Brand className='navbar-brand' href="/"><img className='logo' src={logo} alt="Logo" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

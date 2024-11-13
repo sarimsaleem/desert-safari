@@ -23,7 +23,7 @@
             <Route path="/contact" element={<Contact />} />
             <Route path="/packages/:categoryId" element={<Packages />} />
             <Route path="/packages/:categoryId/:productId" element={<Package />} /> 
-            <Route path="/card" element={<BookingCard/>} />
+            <Route path="/cart" element={<BookingCard/>} />
             <Route path="/order-info" element={<OrderInfo />} />
           </Routes>
           <SubFooter />

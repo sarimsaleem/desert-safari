@@ -13,6 +13,7 @@ const Package = () => {
   const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     if (params?.productId) {
       loadProduct(params.productId);
     }

@@ -16,6 +16,7 @@ const Packages = (props) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     let categoryId = state?.category?._id || params?.categoryId;
     if (categoryId) {
       loadCategory(categoryId);

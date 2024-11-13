@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -10,6 +10,10 @@ const BookingCard = () => {
     const { Title, Paragraph } = Typography;
     const [form] = Form.useForm();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [])
 
 
     const location = useLocation();
@@ -89,7 +93,7 @@ const BookingCard = () => {
                                     <th></th>
                                     <th></th>
                                     <th>Product</th>
-                                    <th>Price</th>
+                                    {/* <th>Price</th> */}
                                     <th>Package Quantity</th>
                                     <th>Subtotal</th>
                                 </tr>
@@ -126,7 +130,7 @@ const BookingCard = () => {
                                                 <button onClick={() => setPackageQuantity(packageQuantity + 1)}>+</button>
                                             </div>
                                         </td>
-                                        <td data-label="Price">AED {adultPrice.toFixed(2)}</td>
+                                        {/* <td data-label="Price">AED {adultPrice.toFixed(2)}</td> */}
                                         <td data-label="Subtotal">
                                             AED {(calculateSubtotalForOnePackage(booking) * packageQuantity).toFixed(2)}
                                         </td>

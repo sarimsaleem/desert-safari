@@ -15,6 +15,7 @@
   font-size: 2rem;
   font-weight: 600;
   color: var(--category-color);
+  text-align: center;
 }
 
 .booking-table {
@@ -124,6 +125,9 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .quantity-control button{
+
+  }
   .booking-card-wrapper {
     padding: 20px;
   }
@@ -195,7 +199,9 @@
 
   .quantity-control button,
   .quantity-control input {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+
   }
 }
