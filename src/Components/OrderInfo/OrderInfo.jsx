@@ -119,7 +119,6 @@ const OrderInfo = () => {
                                     <Typography className="typo-billing">Room No.(Optional)</Typography>
                                     <Form.Item
                                         name="roomNo"
-                                        // rules={[{ pattern: /^[0-9]+$/, message: 'Room number should be a valid number' }]}
                                     >
                                         <Input placeholder="Enter room number" />
                                     </Form.Item>

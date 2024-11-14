@@ -82,9 +82,8 @@ const Package = () => {
                 <div className="row">
                   {Array.isArray(obj.data) && obj.data.map((chilObj, childIndex) => (
                     <React.Fragment key={childIndex}>
-                      {/* Check for item and itemDescription */}
                       <div className="col-6">
-                        <li className="detail-li d-flex align-items-center">
+                        <li className="detail-li">
                           {!obj?.hideItemIcon && <FaCheck className="checkIcon" />}
                           <div>
                             <p style={{ margin: 0 }}>
@@ -93,8 +92,6 @@ const Package = () => {
                           </div>
                         </li>
                       </div>
-                      {/* Display description in a full-width column if it exists */}
-
                     </React.Fragment>
                   ))}
                   {obj.description && (

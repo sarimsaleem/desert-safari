@@ -91,6 +91,8 @@
   color: var(--text-color);
   font-size: 14px;
   margin-bottom: 3px;
+  display: flex;
+  align-items: center;
 }
 
 .detail-btn {
@@ -119,9 +121,10 @@
 .checkIcon {
   color: var(--color);
   margin-right: 8px;
+  width: 14px; /* Fixed width */
+  height: 14px; /* Fixed height */
+  flex-shrink: 0; /* Prevent shrinking */
 }
-
-
 .book-now-btn {
   display: inline-block;
   margin: 40px auto 0;
