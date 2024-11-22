@@ -116,7 +116,7 @@ const OrderInfo = () => {
                                 </Col>
 
                                 <Col span={12}>
-                                    <Typography className="typo-billing">Room No.(Optional)</Typography>
+                                    <Typography className="typo-billing">Room No</Typography>
                                     <Form.Item
                                         name="roomNo"
                                     >
@@ -155,7 +155,7 @@ const OrderInfo = () => {
 
                             <Row gutter={16}>
                                 <Col span={24}>
-                                    <Typography className="typo-billing">Additional Information</Typography>
+                                    <Typography className="typo-billing">Additional Information.(Optional)</Typography>
                                     <Form.Item
                                         name="additionalInfo"
                                     >

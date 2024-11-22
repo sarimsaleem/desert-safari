@@ -8,14 +8,15 @@ import { fetchCategories } from '../../Utils/function';
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true); // Loading state
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     getCategories();
   }, []);
-
+ 
   const getCategories = async () => {
-    setLoading(true); // Start loading
+    setLoading(true); 
 
     try {
       const res = await fetchCategories();
@@ -31,9 +32,7 @@ const Home = () => {
       console.error("Error fetching categories: ", error);
       setCategories([]);
     }
-
-    // Ensure the spinner runs for at least 2 seconds
-    setTimeout(() => setLoading(false), 2000); // Set loading to false after 2 seconds
+    setTimeout(() => setLoading(false), 2000); 
   };
 
   return (
@@ -41,12 +40,10 @@ const Home = () => {
       <Crousel />
 
       {loading ? (
-        // Show spinner while loading
         <div className="spinner-container" style={{ textAlign: 'center', padding: '20px' }}>
           <Spin size="large" />
         </div>
       ) : (
-        // Render categories once loaded
         categories?.map((obj, index) => (
           <HomeSectionCard
             data={obj}
