@@ -26,11 +26,10 @@ const Header = () => {
     const loadProduct = (categoryId) => {
         fetchProducts({ categoryId })
             .then(res => {
-                console.log('res', res, categoryId)
                 setMenuCategoryPackages(res);
             })
             .catch(error => {
-                console.error("Error fetching product: ", error);
+                // console.error("Error fetching product: ", error);
                 setMenuCategoryPackages([]);
             })
 
@@ -44,13 +43,11 @@ const Header = () => {
                 ...doc.data()
             }));
             const foundMenuCategory = categoriesData.find(obj => obj?.show_on_menu)
-            console.log('foundMenuCategory', foundMenuCategory)
             if (foundMenuCategory?._id) {
                 loadProduct(foundMenuCategory?._id)
             }
             setMenuCategory(foundMenuCategory)
             setCategories(categoriesData);
-            console.log(categoriesData, "categoriesData");
         } catch (error) {
             console.error("Error fetching categories:", error);
         }

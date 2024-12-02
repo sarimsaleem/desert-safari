@@ -1,52 +1,62 @@
-
 .checkout-btn {
-    padding: 7px 30px;
-    font-size: 16px;
-    color: white;
-    background-color: var(--color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 20px;
-  }
-  
-  .checkout-btn:hover {
-    background-color: var(--color);
-  }
-  
-  .second-row-biling-form {
-    margin-top: 45px;
-  }
-  
-  
-  
-  .para-biling {
-    color: var(--text-color);
-  }
-  
-  .head-biling {
-    color: var(--color);
-  }
-  
-  .typo-billing {
-    margin-bottom: 10px;
-    color: var(--black);
-  }
-  
-  .ant-input {
-    min-height:40px ;
-    min-width: 200px; 
-    width: 100%;
-    padding: 8px 12px;
-    border-radius: 4px; 
-    font-size: 15px;
-  }
-  
-  :where(.css-dev-only-do-not-override-14qglws).ant-input:placeholder-shown{
-    padding: 5px;
-  }
-  :where(.css-dev-only-do-not-override-14qglws).ant-input:placeholder-shown::placeholder{
-    font-size: 14px;
-    color: var(--text-color);
-  }
+  padding: 7px 30px;
+  font-size: 16px;
+  color: white;
+  background-color: var(--color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.checkout-btn:hover {
+  background-color: var(--color);
+}
+
+.second-row-biling-form {
+  margin-top: 45px;
+}
+
+
+
+.para-biling {
+  color: var(--text-color);
+}
+
+.head-biling {
+  color: var(--color);
+}
+
+.typo-billing {
+  margin-bottom: 10px;
+  color: var(--black);
+}
+
+.ant-input {
+  min-height: 40px;
+  min-width: 200px;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+:where(.css-dev-only-do-not-override-14qglws).ant-input:placeholder-shown {
+  padding: 5px;
+  /* height: 120px; */
+}
+
+:where(.css-dev-only-do-not-override-14qglws).ant-input:placeholder-shown::placeholder {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.orderIinfo-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderInfo-parent {
+  margin: 0 50px;
+}

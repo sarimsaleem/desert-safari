@@ -11,6 +11,7 @@
   import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
   import BookingCard from './Components/BookingCard/BookingCard';
   import OrderInfo from './Components/OrderInfo/OrderInfo';
+import Blog from './Blog/Blog';
 
   function App() {
     return (
@@ -25,6 +26,7 @@
             <Route path="/packages/:categoryId/:productId" element={<Package />} /> 
             <Route path="/cart" element={<BookingCard/>} />
             <Route path="/order-info" element={<OrderInfo />} />
+            <Route path="/blog" element={<Blog />} />
           </Routes>
           <SubFooter />
           <Footer />

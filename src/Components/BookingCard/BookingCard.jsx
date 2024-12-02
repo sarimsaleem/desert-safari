@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { AiOutlineClose } from 'react-icons/ai';
+import header from '../../assets/header.jpg'
 import './bookingcard.css';
 import { Col, Row } from 'react-bootstrap';
 import { Form, Input, Typography, Button } from 'antd';
@@ -82,10 +83,15 @@ const BookingCard = () => {
 
     return (
         <div className="booking-card-wrapper" style={{ maxWidth: '100%', overflowX: 'hidden' }}>
+            <div className="image-detail-container">
+                <img src={header} alt="" />
+                <div className="image-text-container">
+                    <h6 className='image-detail-text fs-1'>Cart</h6>
+                </div>
+            </div>
             <Row gutter={20}>
                 <Col className="gutter-row" span={12}>
                     <div className="booking-card">
-                        <h1 className='booking-summary'>Cart</h1>
 
                         <table className="booking-table">
                             <thead>
@@ -154,7 +160,7 @@ const BookingCard = () => {
                                 </div>
                             </div>
                         </div>
-                        <Button id='Proceed-to-Payment' onClick={handleCheckout}>Proceed to Payment</Button>
+                        <Button id='Proceed-to-Payment' onClick={handleCheckout}>Proceed to Checkout</Button>
                     </div>
                 </Col>
             </Row>
