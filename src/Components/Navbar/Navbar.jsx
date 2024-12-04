@@ -29,11 +29,19 @@ const Header = () => {
                 setMenuCategoryPackages(res);
             })
             .catch(error => {
-                // console.error("Error fetching product: ", error);
                 setMenuCategoryPackages([]);
             })
 
     };
+    const handlePackageClick = (packageData, categoryData) => {
+        navigate(`/packages/${convertToSlug(categoryData?._id)}/${convertToSlug(packageData?._id)}`, {
+            state: {
+                category: categoryData,
+                productId: packageData?._id
+            }
+        });
+    };
+
 
     const fetchCategories = async () => {
         try {
@@ -59,15 +67,7 @@ const Header = () => {
         });
     };
 
-    const handlePackageClick = (packageData, categoryData) => {
-        navigate(`/packages/${convertToSlug(categoryData?._id)}/${convertToSlug(packageData?._id)}`, {
-            state: {
-                category: categoryData,
-                productId: packageData?._id
-            }
-        });
-    };
-
+    
     return (
         <Navbar expand="md" className="bg-body-tertiary header">
             <Container>
