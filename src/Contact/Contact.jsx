@@ -17,16 +17,18 @@ const Contact = () => {
     message: '',
   };
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (values, { resetForm }) => {
     console.log('Form values:', values);
     try {
-      await saveContactData(values); 
+      await saveContactData(values);
       message.success('Form submitted successfully!');
+      resetForm(); 
     } catch (error) {
       message.error('Error submitting form.');
       console.error('Error saving data to Firebase:', error);
     }
   };
+  
 
   return (
     <div className='contact-parent'>

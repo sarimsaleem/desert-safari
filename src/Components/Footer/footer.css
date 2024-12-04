@@ -1,11 +1,12 @@
     .footer {
         background-color: #000000;
         background-image: url(../../assets/footer.png);
-        background-size:cover;
+        background-size: cover;
         background-position: center;
-        padding : 40px 0 0 0;
+        padding: 40px 0 0 0;
         color: #fff;
     }
+
     .footer-heading {
         font-size: 24px;
         margin-bottom: 40px;
@@ -46,20 +47,17 @@
     }
 
     .footer-icon:hover {
-        color: #ccc; 
+        color: #ccc;
     }
+
     /* .footer-bottom {
         background-color: #000; 
         color: #fff;
         padding: 10px 0;
     } */
-    
+
     .footer-bottom p {
         margin: 0;
         font-size: 16px;
-        font-family: " monospace";
-        padding:30px 0 20px ;
+        padding: 30px 0 20px;
     }
-.contact-sec{
-    margin-left: 30px;
-}

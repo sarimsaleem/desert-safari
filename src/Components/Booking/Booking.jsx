@@ -41,118 +41,118 @@ const Booking = ({ product }) => {
 
   return (
     <div className="form">
-  <div className="container">
-    <h3 className="detail-BookNow">Book Tour</h3>
-    <Row gutter={[16, 24]}>
-      <Col xs={24} sm={12} md={8}>
-        <div className="column-child">
-          <h4>Tour Name</h4>
-        </div>
-      </Col>
-      <Col xs={24} sm={12} md={8}>
-        <div className="column-child">
-          <h4>Price Per Adult</h4>
-        </div>
-      </Col>
-      <Col xs={24} sm={12} md={8}>
-        <div className="column-child">
-          <h4>Price Per Child</h4>
-        </div>
-      </Col>
-    </Row>
+      <div className="container">
+        <h3 className="detail-BookNow">Book Tour</h3>
+        <Row gutter={[16, 24]}>
+          <Col xs={24} sm={12} md={8}>
+            <div className="column-child">
+              <h4>Tour Name</h4>
+            </div>
+          </Col>
+          <Col xs={24} sm={12} md={8}>
+            <div className="column-child">
+              <h4>Price Per Adult</h4>
+            </div>
+          </Col>
+          <Col xs={24} sm={12} md={8}>
+            <div className="column-child">
+              <h4>Price Per Child</h4>
+            </div>
+          </Col>
+        </Row>
 
-    <Row gutter={[16, 24]}>
-      <Col xs={24} sm={12} md={8}>
-        <div className="column-child2">
-          <h4>{product?.image_text}</h4>
-        </div>
-      </Col>
-      <Col xs={24} sm={12} md={8}>
-        <div className="column-child2">
-          <h4>AED {product?.price}</h4>
-        </div>
-      </Col>
-      <Col xs={24} sm={12} md={8}>
-        <div className="column-child2">
-          <h4>AED {childPrice}</h4>
-        </div>
-      </Col>
-    </Row>
+        <Row gutter={[16, 24]}>
+          <Col xs={24} sm={12} md={8}>
+            <div className="column-child2">
+              <h4>{product?.image_text}</h4>
+            </div>
+          </Col>
+          <Col xs={24} sm={12} md={8}>
+            <div className="column-child2">
+              <h4>AED {product?.price}</h4>
+            </div>
+          </Col>
+          <Col xs={24} sm={12} md={8}>
+            <div className="column-child2">
+              <h4>AED {childPrice}</h4>
+            </div>
+          </Col>
+        </Row>
 
-    <Row gutter={[16, 24]}>
-  <Col xs={24} sm={12} md={12} lg={6}>
-    <Typography className="subParent-label">Tour Date</Typography>
-    <div className="input-btn">
-      <Input
-        type="date"
-        className="date"
-        value={tourDate}
-        onChange={(e) => {
-          setTourDate(e.target.value);
-          setError('');
-        }}
-        style={{ outline: 'none', boxShadow: 'none' }} 
-        min={today}
-      />
+        <Row gutter={[16, 24]}>
+          <Col xs={24} sm={12} md={12} lg={6}>
+            <Typography className="subParent-label">Tour Date</Typography>
+            <div className="input-btn">
+              <Input
+                type="date"
+                className="date"
+                value={tourDate}
+                onChange={(e) => {
+                  setTourDate(e.target.value);
+                  setError('');
+                }}
+                style={{ outline: 'none', boxShadow: 'none' }}
+                min={today}
+                onKeyDown={(e) => e.preventDefault()} // Prevent typing in the input field
+              />
+            </div>
+          </Col>
+
+
+          <Col xs={24} sm={12} md={12} lg={6}>
+            <Typography className="subParent-label">Adult</Typography>
+            <div className="input-btn">
+              <button onClick={() => handleSubtract(setAdults, adults)}>-</button>
+              <Input type="number" value={adults} readOnly />
+              <button onClick={() => handleAdd(setAdults, adults)}>+</button>
+            </div>
+          </Col>
+          <Col xs={24} sm={12} md={12} lg={6}>
+            <Typography className="subParent-label">Child (Age 3-10)</Typography>
+            <div className="input-btn">
+              <button onClick={() => handleSubtract(setChildren, children)}>-</button>
+              <Input type="number" value={children} readOnly />
+              <button onClick={() => handleAdd(setChildren, children)}>+</button>
+            </div>
+          </Col>
+          <Col xs={24} sm={12} md={12} lg={6}>
+            <Typography className="subParent-label">Infant (Age 0-3)</Typography>
+            <div className="input-btn">
+              <button onClick={() => handleSubtract(setInfants, infants)}>-</button>
+              <Input type="number" value={infants} readOnly />
+              <button onClick={() => handleAdd(setInfants, infants)}>+</button>
+            </div>
+          </Col>
+        </Row>
+
+
+        <h4 className="summary-heading">SUMMARY</h4>
+        <Row gutter={[16, 24]}>
+          <Col xs={12} sm={8} md={3}>
+            <div className="summary-headings">
+              <h5>Subtotal</h5>
+              <h5>Total</h5>
+            </div>
+          </Col>
+          <Col xs={12} sm={8} md={5} >
+            <div className="summary-headings">
+              <h5>AED {subtotal.toFixed(2)}</h5>
+              <h5>AED {total.toFixed(2)}</h5>
+            </div>
+          </Col>
+        </Row>
+
+        <div className="book-parent">
+          <button
+            className="booknow-booking"
+            onClick={handleBooking}
+            disabled={!tourDate || adults < 1}
+          >
+            Book Now
+          </button>
+        </div>
+      </div>
     </div>
-  </Col>
-  <Col xs={24} sm={12} md={12} lg={6}>
-    <Typography className="subParent-label">Adult</Typography>
-    <div className="input-btn">
-      <button onClick={() => handleSubtract(setAdults, adults)}>-</button>
-      <Input type="number" value={adults} readOnly />
-      <button onClick={() => handleAdd(setAdults, adults)}>+</button>
-    </div>
-  </Col>
-  <Col xs={24} sm={12} md={12} lg={6}>
-    <Typography className="subParent-label">Child (Age 3-10)</Typography>
-    <div className="input-btn">
-      <button onClick={() => handleSubtract(setChildren, children)}>-</button>
-      <Input type="number" value={children} readOnly />
-      <button onClick={() => handleAdd(setChildren, children)}>+</button>
-    </div>
-  </Col>
-  <Col xs={24} sm={12} md={12} lg={6}>
-    <Typography className="subParent-label">Infant (Age 0-3)</Typography>
-    <div className="input-btn">
-      <button onClick={() => handleSubtract(setInfants, infants)}>-</button>
-      <Input type="number" value={infants} readOnly />
-      <button onClick={() => handleAdd(setInfants, infants)}>+</button>
-    </div>
-  </Col>
-</Row>
-
-
-    <h4 className="summary-heading">SUMMARY</h4>
-    <Row gutter={[16, 24]}>
-      <Col xs={12} sm={8} md={3}>
-        <div className="summary-headings">
-          <h5>Subtotal</h5>
-          <h5>Total</h5>
-        </div>
-      </Col>
-      <Col xs={12} sm={8} md={5} >
-        <div className="summary-headings">
-          <h5>AED {subtotal.toFixed(2)}</h5>
-          <h5>AED {total.toFixed(2)}</h5>
-        </div>
-      </Col>
-    </Row>
-
-    <div className="book-parent">
-      <button
-        className="booknow-booking"
-        onClick={handleBooking}
-        disabled={!tourDate || adults < 1}
-      >
-        Book Now
-      </button>
-    </div>
-  </div>
-</div>
-
-
-
   );
 };
 

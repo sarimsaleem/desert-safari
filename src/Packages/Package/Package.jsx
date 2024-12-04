@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FaCheck } from "react-icons/fa";
-import { Spin } from 'antd'; // Importing the Ant Design Spin component
+import { Spin } from 'antd'; 
 import "./package.css";
 import { fetchProduct } from '../../Utils/function';
 import Booking from '../../Components/Booking/Booking';
@@ -10,7 +10,7 @@ const Package = () => {
   const params = useParams();
   const [product, setProduct] = useState({});
   const [showBooking, setShowBooking] = useState(false);
-  const [loading, setLoading] = useState(true); // Loading state
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -20,7 +20,7 @@ const Package = () => {
   }, [params]);
 
   const loadProduct = (productId) => {
-    setLoading(true); // Start loading
+    setLoading(true); 
     fetchProduct(productId)
       .then(res => {
         setProduct(res);
@@ -30,7 +30,7 @@ const Package = () => {
         setProduct({});
       })
       .finally(() => {
-        setLoading(false); // Stop loading when done
+        setLoading(false); 
       });
   };
 
@@ -51,11 +51,11 @@ const Package = () => {
       <div className="image-detail-container">
         {product?.banner_image_url && <img src={product.banner_image_url} alt="" />}
         <div className="image-text-container">
-          {product?.image_text && <h6 className='image-detail-text fs-1'>{product.image_text}</h6>}
+          {product?.image_text && <h6 className='image-detail-text image-detail-text-head '>{product.image_text}</h6>}
           {product?.price && (
             <div className="price-container">
               <h6 className="image-from">From</h6>
-              <h6 className="image-detail-text">
+              <h6 className="image-detail-text image-detail-h6">
                 <sup className="currency2">AED</sup>
                 {product.price}
               </h6>

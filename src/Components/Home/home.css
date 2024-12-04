@@ -1,0 +1,21 @@
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; /* Ensure consistent height during loading */
+  }
+  
+  .content-container {
+    flex-grow: 1;
+
+  }
+  .custom-spinner .ant-spin-dot i {
+    background-color: #DE3030 !important; /* Change the spinner color */
+  }

@@ -80,9 +80,8 @@ const BookingCard = () => {
     };
 
 
-
     return (
-        <div className="booking-card-wrapper" style={{ maxWidth: '100%', overflowX: 'hidden' }}>
+        <div className="booking-card-wrapper" style={{ maxWidth: '100%', overflowX: 'hidden', padding: "0" }}>
             <div className="image-detail-container">
                 <img src={header} alt="" />
                 <div className="image-text-container">

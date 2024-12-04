@@ -9,7 +9,7 @@ const Footer = () => {
             <Container>
                 <Row>
                     {/* Column 1: About */}
-                    <Col md={4}>
+                    <Col md={4} style={{paddingInline: "20px"}}>
                         <h5 className='footer-heading'>About</h5>
                         <p className='footer-text'>
                             Desert Safari UAE – offer the Dubai City Tour, Sightseeing Tours, Dubai Combo Tour, Dinner Cruise, and all-inclusive packages for different kinds of desert safari in Dubai with Pick & Drop, BBQ, and Camel Ride. Desertsafariuae.ae is the most distinguished Dubai City Tour and Desert Safari Company in Dubai, UAE. 100% Customer Satisfaction, 5-Star Rating Desert Safari Company in Dubai.
@@ -17,7 +17,7 @@ const Footer = () => {
                     </Col>
 
                     {/* Column 2: Desert Safari Dubai */}
-                    <Col md={4}>
+                    <Col md={4} style={{paddingInline: "20px"}}>
                         <h5 className='footer-heading'>Desert Safari Dubai</h5>
                         <div className='footer-video'>
                             <iframe
@@ -33,7 +33,7 @@ const Footer = () => {
                     </Col>
 
                     {/* Column 3: Contact Us */}
-                    <Col md={4} > 
+                    <Col md={4} style={{paddingInline: "20px"}}> 
                     <div className="contact-sec">
                         <h5 className='footer-heading'>Contact Us</h5>
                         <div className='footer-contact'>

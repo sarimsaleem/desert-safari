@@ -5,18 +5,18 @@ import Expandable from '../Accordion/Accordion';
 import Cart from "../Cart/Cart";
 import HomeSectionCard from '../HomeSectionCard/HomeSectionCard';
 import { fetchCategories } from '../../Utils/function';
+import "./home.css";
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     getCategories();
   }, []);
- 
+
   const getCategories = async () => {
-    setLoading(true); 
+    setLoading(true);
 
     try {
       const res = await fetchCategories();
@@ -32,31 +32,33 @@ const Home = () => {
       console.error("Error fetching categories: ", error);
       setCategories([]);
     }
-    setTimeout(() => setLoading(false), 2000); 
+
+    // Remove the delay if unnecessary
+    setTimeout(() => setLoading(false), 2000);
   };
 
   return (
-    <>
+    <div className="home-container" style={{ minHeight: '100vh', overflow: 'hidden' }}>
       <Crousel />
-
-      {loading ? (
-        <div className="spinner-container" style={{ textAlign: 'center', padding: '20px' }}>
-          <Spin size="large" />
-        </div>
-      ) : (
-        categories?.map((obj, index) => (
-          <HomeSectionCard
-            data={obj}
-            key={obj._id || index} // Use a unique key if available
-            isFirstCategory={index === 0} // Pass true only for the first category
-          />
-        ))
-      )}
-
+      <div className="content-container">
+        {loading ? (
+          <div className="spinner-container">
+            <Spin size="large" className="custom-spinner" />
+          </div>
+        ) : (
+          categories.map((obj, index) => (
+            <HomeSectionCard
+              data={obj}
+              key={obj._id || index}
+              isFirstCategory={index === 0}
+            />
+          ))
+        )}
+      </div>
       <Expandable />
       <Cart />
-    </>
+    </div>
   );
-}
+};
 
 export default Home;
