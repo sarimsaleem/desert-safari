@@ -20,6 +20,7 @@ import Blog from './Blog/Blog';
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="*" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/packages/:categoryId" element={<Packages />} />
@@ -30,8 +31,7 @@ import Blog from './Blog/Blog';
           </Routes>
           <SubFooter />
           <Footer />
-        </Router>  
-
+        </Router>   
       </>
     );
   }
