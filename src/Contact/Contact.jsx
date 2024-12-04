@@ -22,7 +22,7 @@ const Contact = () => {
     try {
       await saveContactData(values);
       message.success('Form submitted successfully!');
-      resetForm(); 
+      resetForm();
     } catch (error) {
       message.error('Error submitting form.');
       console.error('Error saving data to Firebase:', error);
@@ -32,9 +32,14 @@ const Contact = () => {
 
   return (
     <div className='contact-parent'>
-      <div className='image-detail-container'>
-        <img src={header} alt="" />
-        <h1 className='image-text-container'>Contact Us</h1>
+      <div className="page-header" >
+        <div className="container">
+          <div className="row">
+            <div className='package-text'>
+            <h6 className='page-heaer-text image-detail-text image-detail-text-head  fs-1'>Contact Us</h6>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="contact-subParent container">
         <div className="row contact-text-container">

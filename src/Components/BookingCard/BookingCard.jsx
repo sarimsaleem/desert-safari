@@ -82,10 +82,13 @@ const BookingCard = () => {
 
     return (
         <div className="booking-card-wrapper" style={{ maxWidth: '100%', overflowX: 'hidden', padding: "0" }}>
-            <div className="image-detail-container">
-                <img src={header} alt="" />
-                <div className="image-text-container">
-                    <h6 className='image-detail-text fs-1'>Cart</h6>
+            <div className="page-header" >
+                <div className="container">
+                    <div className="row">
+                        <div className='package-text'>
+                            <h6 className='page-heaer-text image-detail-text image-detail-text-head  fs-1'>Cart</h6>
+                        </div>
+                    </div>
                 </div>
             </div>
             <Row gutter={20}>

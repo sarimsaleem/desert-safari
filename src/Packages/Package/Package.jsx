@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FaCheck } from "react-icons/fa";
-import { Spin } from 'antd'; 
+import { Spin } from 'antd';
 import "./package.css";
 import { fetchProduct } from '../../Utils/function';
 import Booking from '../../Components/Booking/Booking';
@@ -20,7 +20,7 @@ const Package = () => {
   }, [params]);
 
   const loadProduct = (productId) => {
-    setLoading(true); 
+    setLoading(true);
     fetchProduct(productId)
       .then(res => {
         setProduct(res);
@@ -30,7 +30,7 @@ const Package = () => {
         setProduct({});
       })
       .finally(() => {
-        setLoading(false); 
+        setLoading(false);
       });
   };
 
@@ -47,22 +47,26 @@ const Package = () => {
   }
 
   return (
-    <div className='detail'>
-      <div className="image-detail-container">
-        {product?.banner_image_url && <img src={product.banner_image_url} alt="" />}
-        <div className="image-text-container">
-          {product?.image_text && <h6 className='image-detail-text image-detail-text-head '>{product.image_text}</h6>}
-          {product?.price && (
-            <div className="price-container">
-              <h6 className="image-from">From</h6>
-              <h6 className="image-detail-text image-detail-h6">
-                <sup className="currency2">AED</sup>
-                {product.price}
-              </h6>
+    <div className="main">
+      <div className="page-header" style={{ backgroundImage: `url(${product.banner_image_url})`, }}>
+        <div className="container">
+          <div className="row">
+            <div className='detail'>
+              {product?.image_text && <h6 className='page-heaer-text image-detail-text image-detail-text-head  fs-1'>{product.image_text}</h6>}
+              {product?.price && (
+                <div className="price-container">
+                  <h6 className="image-from">From</h6>
+                  <h6 className="page-heaer-text">
+                    <sup className="currency2">AED</sup>
+                    {product.price}
+                  </h6>
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
       </div>
+
 
       <div className="container">
         <div className="package-parent">

@@ -66,11 +66,22 @@ const OrderInfo = () => {
     };
 
     return (
+        <>
+        <div className="page-header" >
+                <div className="container">
+                    <div className="row">
+                        <div className='package-text'>
+                            <h6 className='page-heaer-text image-detail-text image-detail-text-head  fs-1'>Checkout</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <Container>
             <Row>
                 <Col className="gutter-row" span={12}>
                     <div className="second-row-biling-form">
-                        <Title className='head-biling' style={{ color: "var(--category-color)" }} level={2}>Customer Information</Title>
+                        <Title className='head-biling' style={{ color: "var(--category-color)" }} level={2}>Billing details
+                        </Title>
                         <Paragraph className='para-biling'>Please provide your billing details below. If you have any additional information, you may add it here as well.</Paragraph>
                         <Form
                             form={form}
@@ -193,6 +204,7 @@ const OrderInfo = () => {
                 </Col>
             </Row>
         </Container>
+        </>
     );
 }
 

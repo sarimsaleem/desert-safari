@@ -5,9 +5,14 @@ import header from "../assets/header.jpg"
 const About = () => {
     return (
         <div className="about-parent">
-            <div className='image-detail-container'>
-                <img src={header} alt="" />
-                <h1 className='image-text-container'>About Desert Safari UAE</h1>
+            <div className="page-header" >
+                <div className="container">
+                    <div className="row">
+                        <div className='package-text'>
+                            <h6 className='page-heaer-text image-detail-text image-detail-text-head  fs-1'>About Desert Safari UAE</h6>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className='container'>
                 <p className='about-p'>Desert Safari UAE is one of the reputed <span className='about-p-head'>Tourism Company in Dubai</span> country UAE with hopes, desire and a clear concept of doing commerce. Desert Safari Dubai is a young and thrilling destination management company based in UAE, the regional hub of Globe Class tourism. The company is recognized for professionalism, inspiring operational communications, personalized service and imaginative itineraries that facilitate us to provide clients with the most unforgettable experience. Having made the habit of keeping customers happy with outstanding service, we are fully equipped to assist you in planning organizing and satisfying your needs for group, inducement and individual tours and excursions. The company has set supreme standards of performance; you can depend on us to organize it greatest for you.</p>

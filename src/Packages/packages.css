@@ -17,3 +17,12 @@
     align-items: center;
     z-index: 1000; 
   }
+  .page-header{
+    background-image: url(../assets/header.jpg);
+  }
+  .package-text{
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    z-index: 1;
+  }

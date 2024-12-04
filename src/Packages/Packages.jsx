@@ -70,10 +70,13 @@ const Packages = (props) => {
           <Spin size="large" />
         </div>
       )}
-      <div className="image-detail-container">
-        <img src={header} alt="" />
-        <div className="image-text-container">
-          <h6 className='image-detail-text image-detail-text-head '>{category?.category_name || '-'}</h6>
+      <div className="page-header" >
+        <div className="container">
+          <div className="row">
+            <div className='package-text'>
+              {category?.category_name || '-' && <h6 className='page-heaer-text image-detail-text image-detail-text-head  fs-1'>{category?.category_name || '-'}</h6>}
+            </div>
+          </div>
         </div>
       </div>
       <div className='container'>

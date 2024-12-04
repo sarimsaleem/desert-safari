@@ -7,65 +7,49 @@
 }
 
 .detail {
-  padding-bottom: 50px;
-}
-.image-detail-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  justify-content: center;
-  position: relative; /* Make sure the container is positioned for the overlay */
-}
-
-.image-detail-container img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 0;
   position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1; /* Image stays below the overlay */
+  z-index: 3;
 }
 
-/* Overlay styles */
-.image-detail-container::before {
+.page-header{
+  position: relative;
+  padding: 100px 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.page-header::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-  z-index: 2; /* Overlay on top of the image, but behind text */
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 0;
 }
-
-/* Text content */
-.image-text-container {
-  width: 100%;
+.page-header .detail{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 50px;
-  color: white;
-  position: absolute;
-  text-align: center;
-  z-index: 3; /* Text is on top of the overlay */
+}
+.page-header .detail .image-detail-text{
+  text-align: left;
+  flex: 1;
+
 }
 
-.image-detail-text {
-  margin: 0;
+.page-heaer-text {
+  color: white;
   font-size: 60px;
   font-weight: 600;
   font-size: 50px;
+  margin: 0;
 }
 
 .image-from {
   margin: 27px 0px 0 30px;
   font-weight: 700;
   font-size: 24px;
+  color: white;
 }
 
 .currency2 {
@@ -146,7 +130,7 @@
 
 .book-now-btn {
   display: inline-block;
-  margin: 40px auto 0;
+  margin: 40px auto 40px;
   padding: 10px 20px;
   font-size: 1.2rem;
   background-color: var(--color);
@@ -178,20 +162,23 @@
 }
 
 @media (max-width: 780px) {
+  .page-header .detail{
+    display: flex;
+    flex-direction: column;
+  }
   .image-text-container {
     padding: 0px 20px;
   }
 
   .currency2 {
-    font-size: 14px;
+    font-size: 24px;
     margin: 8px 0px 0 0;
-    margin: 0 3px;
   }
 
   .image-from {
-    margin: 14px 0px 0 0;
-    font-size: 17px;
-  
+    margin: 0;  
+    display: flex;
+    align-items: center;
   }
 
   .image-detail-h6 {
@@ -200,14 +187,13 @@
 
   .image-detail-text-head {
     font-size: 18px;
-    /* margin-bottom: 20px; */
   }
 
   .price-container {
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
-  }
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 10px;
+}
 
   .image-detail-container {
     padding: 0 0;
