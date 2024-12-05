@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./booking.css";
-import { Col, Input, Row, Typography } from 'antd';
+import { Button, Col, Input, Row, Typography } from 'antd';
 
 const Booking = ({ product }) => {
   const navigate = useNavigate();
@@ -17,14 +17,17 @@ const Booking = ({ product }) => {
   const total = subtotal;
 
   const handleBooking = () => {
-    if (!tourDate) {
+    if (!tourDate ) {
       setError("Please select a tour date.");
+      console.log(error, "error")
       return;
     }
     if (adults < 1) {
       setError("At least one adult must be included.");
       return;
     }
+
+    setError("");
 
     navigate("/cart", {
       state: {
@@ -93,11 +96,10 @@ const Booking = ({ product }) => {
                 }}
                 style={{ outline: 'none', boxShadow: 'none' }}
                 min={today}
-                onKeyDown={(e) => e.preventDefault()} // Prevent typing in the input field
+                onKeyDown={(e) => e.preventDefault()} 
               />
             </div>
           </Col>
-
 
           <Col xs={24} sm={12} md={12} lg={6}>
             <Typography className="subParent-label">Adult</Typography>
@@ -125,7 +127,6 @@ const Booking = ({ product }) => {
           </Col>
         </Row>
 
-
         <h4 className="summary-heading">SUMMARY</h4>
         <Row gutter={[16, 24]}>
           <Col xs={12} sm={8} md={3}>
@@ -134,7 +135,7 @@ const Booking = ({ product }) => {
               <h5>Total</h5>
             </div>
           </Col>
-          <Col xs={12} sm={8} md={5} >
+          <Col xs={12} sm={8} md={5}>
             <div className="summary-headings">
               <h5>AED {subtotal.toFixed(2)}</h5>
               <h5>AED {total.toFixed(2)}</h5>
@@ -143,13 +144,16 @@ const Booking = ({ product }) => {
         </Row>
 
         <div className="book-parent">
-          <button
-            className="booknow-booking"
+          <div className="error-message" style={{ color: 'red', marginBottom: '1rem' }}>
+            {/* {error && <p>{error}</p>} */}
+          </div>
+          <Button
+            id="booknow-booking"
             onClick={handleBooking}
             disabled={!tourDate || adults < 1}
           >
             Book Now
-          </button>
+          </Button>
         </div>
       </div>
     </div>
