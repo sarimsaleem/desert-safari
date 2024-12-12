@@ -8,10 +8,11 @@
     font-family: inherit;
     font-weight: 600;
 }
-.accordion-body{
-    background: #f8f8f8;
 
+.accordion-body {
+    background: #f8f8f8;
 }
+
 .accordion-button:not(.collapsed) {
     background: #f8f8f8;
 }
@@ -35,7 +36,8 @@
 .personLuagage {
     font-size: 25px;
 }
-.faqs-heading{
+
+.faqs-heading {
     color: var(--category-color);
     font-size: 30px;
     text-transform: uppercase;
@@ -44,6 +46,7 @@
     margin: 5px 0 0 0;
     margin: 10px 0 20px;
 }
-.accordion-item:first-of-type>.accordion-header .accordion-button {
- 
+
+.accordion-item:first-of-type > .accordion-header .accordion-button {
+    /* Customize first item's button if needed */
 }

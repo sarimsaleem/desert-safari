@@ -12,6 +12,7 @@
   import BookingCard from './Components/BookingCard/BookingCard';
   import OrderInfo from './Components/OrderInfo/OrderInfo';
 import Blog from './Blog/Blog';
+import Readmore from './Blog/ReadMore/Readmore';
 
   function App() {
     return (
@@ -28,6 +29,7 @@ import Blog from './Blog/Blog';
             <Route path="/cart" element={<BookingCard/>} />
             <Route path="/order-info" element={<OrderInfo />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/readmore" element={<Readmore />} />
           </Routes>
           <SubFooter />
           <Footer />

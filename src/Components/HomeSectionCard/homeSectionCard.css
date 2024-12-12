@@ -3,13 +3,13 @@
     background-repeat: no-repeat;
 }
 
-.card-section.light .act-sub-head, .card-section.light .faqs-parent {
+.card-section.light .act-sub-head,
+.card-section.light .faqs-parent {
     color: var(--white);
 }
-.card-section.dark .act-sub-head {}
 
 .act-card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
     border: none;
     overflow: hidden;
@@ -17,7 +17,7 @@
 }
 
 .act-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .card-img-top {
@@ -41,7 +41,7 @@
 .image-container::before {
     content: "";
     position: absolute;
-    z-index: 1; 
+    z-index: 1;
     width: 100%;
     height: 100%;
     top: 0;
@@ -51,7 +51,7 @@
 }
 
 .act-card:hover .image-container::before {
-    opacity: 1; 
+    opacity: 1;
 }
 
 .act-card:hover .image-container::before {
@@ -61,19 +61,23 @@
 .activities-parent {
     padding-block: 70px;
 }
+
 @media (max-width:780px) {
     .activities-parent {
         padding-block: 40px;
     }
-    .act-sub-head{
+
+    .act-sub-head {
         font-size: 25px;
     }
 }
+
 @media (min-width:780px) and (max-width:1100px) {
     .activities-parent {
         padding-block: 40px;
     }
 }
+
 .act-main-heading {
     text-align: center;
     color: var(--text-color);
@@ -94,11 +98,13 @@
     display: flex;
     justify-content: space-between;
 }
+
 .title-container {
     display: flex;
     flex-wrap: wrap;
 
-  }
+}
+
 .card-title {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     line-height: 24px;
@@ -129,12 +135,13 @@
     border: none;
     color: white;
 }
+
 .act-btn:hover {
     background: var(--color);
     color: white;
 }
 
-.viewmore2{
+.viewmore2 {
     color: white;
     text-decoration: none;
 }
@@ -148,19 +155,20 @@
     border-radius: 5px;
     font-size: 20px;
     font-weight: 700;
-    z-index: 2; 
-    transition: color 0.3s ease; 
+    z-index: 2;
+    transition: color 0.3s ease;
 }
 
 .act-card:hover .image-text {
-    color: var(--color); 
+    color: var(--color);
 }
-.card-img-top{
+
+.card-img-top {
     cursor: pointer;
 }
 
 .image-text:hover {
-    color: var(--color); 
+    color: var(--color);
 }
 
 .most-popular {
@@ -182,19 +190,35 @@
 }
 
 @-webkit-keyframes flash {
-    0%, 100% { opacity: 1; } 
-    50% { opacity: 0; } 
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 @keyframes flash {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
-.view-more{
+
+.view-more {
     display: flex;
     justify-content: center;
 }
-.view-more button{
+
+.view-more button {
     border: none;
     border-radius: 7px;
     background: var(--category-color);

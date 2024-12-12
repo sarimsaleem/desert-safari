@@ -67,7 +67,7 @@ const Packages = (props) => {
     <div className="cruiseDinner">
       {loading && (
         <div className="loading-overlay">
-          <Spin size="large" />
+          <Spin size="large" className="custom-spinner" />
         </div>
       )}
       <div className="page-header" >

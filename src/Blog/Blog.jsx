@@ -1,31 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { Spin } from 'antd'; 
-import { fetchProducts } from '../Utils/function'; 
-import './Blog.css'; 
-import Header from "../assets/header.jpg"
+import { useNavigate } from 'react-router-dom'; 
+import { Spin } from 'antd';
+import { fetchBlogs } from './Functions/functions';
+import './Blog.css';
+import Header from "../assets/header.jpg";
+
 const Blog = () => {
-  const [products, setProducts] = useState([]);
+  const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const header = '/path/to/your/header/image.jpg'; 
-  const category = { category_name: 'Desert Adventures' }; 
+  const category = { category_name: 'Desert Adventures' };
+  const navigate = useNavigate(); 
 
   useEffect(() => {
-    const getProducts = async () => {
+    const getBlogs = async () => {
       try {
-        const productsList = await fetchProducts();
-        setProducts(productsList);
+        const blogsList = await fetchBlogs();
+        const replicatedBlogs = [].concat(blogsList, blogsList, blogsList);
+        setBlogs(replicatedBlogs);
+        console.log(replicatedBlogs, "replicatedBlogs");
       } catch (error) {
-        console.error('Failed to fetch products:', error);
+        console.error('Failed to fetch blogs:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    getProducts();
+    getBlogs();
   }, []);
 
   const handleClick = (category, item) => {
-    console.log('Booking:', category, item);
+    navigate('/readmore', { state: { category, item } }); // Navigate to Readmore with state
   };
 
   return (
@@ -45,24 +49,28 @@ const Blog = () => {
             </div>
           ) : (
             <div className="blog-cards-row">
-              {products.map((item, index) => (
-                <div key={index} className="blog-card-wrapper">
+              {blogs.map((blog, index) => (
+                <div key={blog._id || index} className="blog-card-wrapper">
                   <div className="blog-card">
                     <div className="blog-image-container">
-                      {item?.image_url && <img src={item.image_url} className="blog-card-image" alt={item.event_name} />}
-                      {item?.image_text && <h6 className="blog-image-text">{item.image_text}</h6>}
+                      {blog?.banner_image_url && <img src={blog.banner_image_url} className="blog-card-image" alt={blog.title || 'Blog'} />}
                     </div>
                     <div className="blog-card-body">
                       <div className="blog-card-details">
                         <div className="blog-card-title-container">
-                          {item?.event_name && <h3 className="blog-card-title">{item.event_name}</h3>}
-                          {item?.most_popular && <span className="blog-most-popular">Most Popular</span>}
+                          {blog?.title && <h3 className="blog-card-title">{blog.title}</h3>}
                         </div>
-                        {item?.price && <h3 className="blog-card-price"><sup className="blog-currency">AED</sup>{item.price}</h3>}
                       </div>
-                      <button className="blog-book-now-btn" onClick={() => handleClick(category, item)}>
-                        Book Now
-                      </button>
+                      <div className="">
+                        <div className="">
+                          {blog?.content && <p className="blog-text">{blog.content}</p>}
+                        </div>
+                      </div>
+                      <div className="btn-parent-blog">
+                        <button className="blog-book-now-btn" onClick={() => handleClick(category, blog)}>
+                          Read More
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

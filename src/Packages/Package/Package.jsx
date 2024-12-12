@@ -41,7 +41,7 @@ const Package = () => {
   if (loading) {
     return (
       <div className="loading-indicator-centered">
-        <Spin size="large" />
+        <Spin size="large" className="custom-spinner" />
       </div>
     );
   }
