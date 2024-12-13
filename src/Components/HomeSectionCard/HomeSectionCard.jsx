@@ -45,7 +45,6 @@ const HomeSectionCard = ({ data, isFirstCategory }) => {
       });
   };
 
-  // Limit products based on whether it’s the first category or not
   const displayedProducts = isFirstCategory ? products.slice(0, 6) : products.slice(0, 3);
 
   return displayedProducts.length ? (

@@ -180,3 +180,18 @@
     max-width: 100%;
   }
 }
+.blog-card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Show 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blog-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 8; /* Show 8 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

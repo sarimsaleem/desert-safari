@@ -161,9 +161,6 @@
   font-size: 14px;
   color: #777;
 }
-
-/* Links */
-.read-more-link {
-  color: #007bff;
-  text-decoration: none;
+.custom-spinner{
+  color: var(--color);
 }
