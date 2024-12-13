@@ -70,7 +70,7 @@ const Header = () => {
     
     return (
         <Navbar expand="md" className="bg-body-tertiary header">
-            <Container>
+            <Container className='container-navbar'>
                 <Navbar.Brand className='navbar-brand' href="/"><img className='logo' src={logo} alt="Logo" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
