@@ -94,7 +94,7 @@
     font-size: 14px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .dropDawn-cont1 {
         width: 245px;
     }
@@ -102,7 +102,11 @@
     .dropDawn-cont {
         width: 215px;
     }
+    .navbar-collapse{
+        margin: 20px 0;
+    }
 }
+
 @media (min-width: 768px) and (max-width: 1200px) {
     .logo{
         width: 90px;
