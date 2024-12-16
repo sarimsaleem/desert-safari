@@ -17,7 +17,7 @@ const Booking = ({ product }) => {
   const total = subtotal;
 
   const handleBooking = () => {
-    if (!tourDate ) {
+    if (!tourDate) {
       setError("Please select a tour date.");
       console.log(error, "error")
       return;
@@ -27,6 +27,7 @@ const Booking = ({ product }) => {
       return;
     }
 
+    
     setError("");
 
     navigate("/cart", {
@@ -35,6 +36,12 @@ const Booking = ({ product }) => {
         bookingDetails: { tourDate, adults, children, infants, total }
       }
     });
+  };
+
+  const getButtonText = () => {
+    if (!tourDate) return "Select a date";
+    if (adults < 1) return "Add at least 1 adult";
+    return "Book Now";
   };
 
   const handleAdd = (setFunc, value) => setFunc(value + 1);
@@ -96,7 +103,7 @@ const Booking = ({ product }) => {
                 }}
                 style={{ outline: 'none', boxShadow: 'none' }}
                 min={today}
-                onKeyDown={(e) => e.preventDefault()} 
+                onKeyDown={(e) => e.preventDefault()}
               />
             </div>
           </Col>
@@ -143,16 +150,26 @@ const Booking = ({ product }) => {
           </Col>
         </Row>
 
-        <div className="book-parent">
+        {/* {error && <p>{error}</p>} */}
+
+        {/* <div className="book-parent">
           <div className="error-message" style={{ color: 'red', marginBottom: '1rem' }}>
-            {/* {error && <p>{error}</p>} */}
           </div>
           <Button
             id="booknow-booking"
             onClick={handleBooking}
-            disabled={!tourDate || adults < 1}
+            // disabled={!tourDate || adults < 1}
           >
             Book Now
+          </Button>
+        </div> */}
+        <div className="book-parent">
+          <Button
+            id="booknow-booking"
+            onClick={handleBooking}
+            style={{ textAlign: 'center' }}
+          >
+            {getButtonText()}
           </Button>
         </div>
       </div>
