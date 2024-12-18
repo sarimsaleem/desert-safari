@@ -133,16 +133,23 @@
     background: var(--category-color);
     padding: 7px 20px;
     border: none;
-    color: white;
+    color: var(--white);
+    outline: none; 
 }
 
 .act-btn:hover {
-    background: var(--color);
-    color: white;
+    background: var(--color) !important; ;
+    color: var(--white) ;
+}
+
+.act-btn:focus,
+.act-btn:active {
+    background: var(--color)  ;
+    color: var(--white) !important;
 }
 
 .viewmore2 {
-    color: white;
+    color: var(--white);
     text-decoration: none;
 }
 
@@ -150,7 +157,7 @@
     position: absolute;
     bottom: 10px;
     left: 10px;
-    color: white;
+    color: var(--white);
     padding: 5px;
     border-radius: 5px;
     font-size: 20px;
@@ -223,7 +230,7 @@
     border-radius: 7px;
     background: var(--category-color);
     padding: 10px 30px;
-    color: white;
+    color: var(--white);
     margin-top: 30px;
     font-weight: 700;
 }

@@ -149,20 +149,6 @@ const Booking = ({ product }) => {
             </div>
           </Col>
         </Row>
-
-        {/* {error && <p>{error}</p>} */}
-
-        {/* <div className="book-parent">
-          <div className="error-message" style={{ color: 'red', marginBottom: '1rem' }}>
-          </div>
-          <Button
-            id="booknow-booking"
-            onClick={handleBooking}
-            // disabled={!tourDate || adults < 1}
-          >
-            Book Now
-          </Button>
-        </div> */}
         <div className="book-parent">
           <Button
             id="booknow-booking"

@@ -33,7 +33,6 @@ const OrderInfo = () => {
             message.success('Order details saved successfully!');
             form.resetFields();
 
-            // Send email notification
             emailjs.send(
                 'service_wazal4q',
                 'template_1ctyl1n',
@@ -89,7 +88,6 @@ const OrderInfo = () => {
                             onFinish={onFinish}
                             autoComplete="off"
                         >
-
                             <Row gutter={16}>
                                 <Col span={12}>
                                     <Typography className="typo-billing">Nationality</Typography>
@@ -175,7 +173,6 @@ const OrderInfo = () => {
                                 </Col>
                             </Row> 
 
-                            {/* Payment Method Section */}
                             <Row gutter={16}>
                                 <Col span={24}>
                                     <Typography className="typo-billing">Payment Method</Typography>
