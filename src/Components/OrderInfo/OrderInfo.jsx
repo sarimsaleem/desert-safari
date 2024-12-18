@@ -87,6 +87,10 @@ const OrderInfo = () => {
                             layout="vertical"
                             onFinish={onFinish}
                             autoComplete="off"
+                            initialValues={{
+                                roomNo: '',
+                                additionalInfo: ''
+                            }}
                         >
                             <Row gutter={16}>
                                 <Col span={12}>
