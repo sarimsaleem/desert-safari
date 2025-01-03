@@ -90,6 +90,13 @@ const OrderInfo = () => {
                             initialValues={{
                                 roomNo: "",
                                 additionalInfo: "",
+                                nationality: "",
+                                fullName: "",
+                                pickupLocation:"",
+                                email:"",
+                                phoneNo: "",
+                                paymentMethod: "",
+
                             }}
                         >
                             <Row gutter={16}>

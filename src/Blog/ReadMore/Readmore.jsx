@@ -48,6 +48,8 @@ const Readmore = () => {
             </div>
         );
     }
+    
+    console.log(item,  "item")
 
     return (
         <>
@@ -65,7 +67,6 @@ const Readmore = () => {
             <div className="readmore-page">
                 <Container>
                     <Row>
-                        {/* Main Content */}
                         <Col lg={8}>
                             <div className="readmore-content">
                                 <div className="readmore-banner-wrapper">
@@ -101,7 +102,8 @@ const Readmore = () => {
                                     </div>
                                 </div>
                                 <div className="readmore-body">
-                                    <p>{item?.content || 'No Content Available'}</p>
+                                    {/* <p>{item?.content || 'No Content Available'}</p> */}
+                                    <div dangerouslySetInnerHTML={{__html : item?.content}}></div>
                                 </div>
                             </div>
                         </Col>
@@ -135,7 +137,6 @@ const Readmore = () => {
                                     </div>
                                 ))}
 
-                                {/* Section: You May Interest */}
                                 <h3 className="sidebar-title" style={{ marginTop: '20px' }}>You May Interest</h3>
                                 {randomBlogs.map((blog, index) => (
                                     <div
