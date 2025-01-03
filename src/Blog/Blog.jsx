@@ -39,13 +39,13 @@ const Blog = () => {
         </div>
       </div>
 
-      <div className="blog-content-container">
+      <div className="blog-content-container">  
         <div className="blog-packages">
           {loading ? (
             <div className="blog-loading">
               <Spin size="large" className="custom-spinner" />
             </div>
-          ) : (
+          ) : ( 
             <div className="blog-cards-row">
               {blogs.map((blog, index) => (
                 <div key={blog._id || index} className="blog-card-wrapper">
