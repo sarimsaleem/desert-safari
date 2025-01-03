@@ -28,7 +28,7 @@ function App() {
           <Route path="/packages/:categoryId/:productId" element={<Package />} />
           <Route path="/cart" element={<BookingCard />} />
           <Route path="/order-info" element={<OrderInfo />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/blogs" element={<Blog />} />
           <Route path="/readmore" element={<Readmore />} />
         </Routes>
         <SubFooter />

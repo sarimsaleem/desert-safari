@@ -59,7 +59,9 @@ const Blog = () => {
                       <div className="blog-card-details">
                         {blog?.title && <h3 className="blog-card-title">{blog.title}</h3>}
                       </div>
-                      {blog?.content && <p className="blog-text">{blog.content}</p>}
+                      <div className="blog-text" dangerouslySetInnerHTML={{__html : blog?.content}}></div>
+
+                      {/* {blog?.content && <p className="blog-text">{blog.content}</p>} */}
                       <div className="btn-parent-blog">
                         <button className="blog-book-now-btn" onClick={() => handleClick(category, blog)}>
                           Read More

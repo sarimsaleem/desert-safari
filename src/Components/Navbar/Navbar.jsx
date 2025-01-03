@@ -124,7 +124,7 @@ const Header = () => {
                             <Nav.Link className="nav-links"><Link className='link' to="/contact">Contact</Link></Nav.Link>
                         </div>
                         <div className='nav-link-parent'>
-                            <Nav.Link className="nav-links"><Link className='link' to="/blog">Blog</Link></Nav.Link>
+                            <Nav.Link className="nav-links"><Link className='link' to="/blogs">Blog</Link></Nav.Link>
                         </div>
                     </Nav>
                 </Navbar.Collapse>
